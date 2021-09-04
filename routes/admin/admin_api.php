@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/get-all/about-us',[AboutUsController::class,'getAll'])->name('about-us.getAll');
+Route::post('/create/about-us',[AboutUsController::class,'create'])->name('about-us.create');
