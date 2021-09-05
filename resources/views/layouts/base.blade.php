@@ -23,8 +23,8 @@
 
     <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
     <!--Plugins-->
-    <script src=""{{{asset('js/jquery.js') }}}></script>
-    <script src=""{{{asset('js/plugins.js') }}}></script>
+    <script src="{{{asset('js/jquery.js') }}}"></script>
+    <script src="{{{asset('js/plugins.js') }}}"></script>
 
     <!--Template functions-->
     <script src="{{{asset('js/functions.js')}}}"></script>

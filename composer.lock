@@ -3164,16 +3164,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "9.7.2",
+            "version": "9.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "9b937b23981e63687f9cb32682c733a50f118809"
+                "reference": "fd826877f4b38004d8ba15c43c1bca74b0e51026"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9b937b23981e63687f9cb32682c733a50f118809",
-                "reference": "9b937b23981e63687f9cb32682c733a50f118809",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/fd826877f4b38004d8ba15c43c1bca74b0e51026",
+                "reference": "fd826877f4b38004d8ba15c43c1bca74b0e51026",
                 "shasum": ""
             },
             "require": {
@@ -3253,7 +3253,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.7.2"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.7.3"
             },
             "funding": [
                 {
@@ -3265,27 +3265,27 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-22T20:08:15+00:00"
+            "time": "2021-09-03T21:49:25+00:00"
         },
         {
             "name": "spatie/temporary-directory",
-            "version": "2.0.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "06fe0f10d068fdf145c9b2235030e568c913bb61"
+                "reference": "f517729b3793bca58f847c5fd383ec16f03ffec6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/06fe0f10d068fdf145c9b2235030e568c913bb61",
-                "reference": "06fe0f10d068fdf145c9b2235030e568c913bb61",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/f517729b3793bca58f847c5fd383ec16f03ffec6",
+                "reference": "f517729b3793bca58f847c5fd383ec16f03ffec6",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0"
+                "php": "^7.2|^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5"
+                "phpunit/phpunit": "^8.0|^9.0"
             },
             "type": "library",
             "autoload": {
@@ -3314,19 +3314,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/2.0.0"
+                "source": "https://github.com/spatie/temporary-directory/tree/1.3.0"
             },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-03-30T19:46:13+00:00"
+            "time": "2020-11-09T15:54:21+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8263,6 +8253,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {
