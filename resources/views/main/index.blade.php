@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="body-inner">
-  
+
     <!-- Inspiro Slider -->
     <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
         <!-- Slide 1 -->
@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="text-center heading-text heading-section">
-                        <h2>SCORD</h2>
+                        <h2>SCORD PROTECTION FORCE</h2>
                     </div>
                     <div>
                         The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
@@ -92,14 +92,14 @@
                                     <textarea type="text" name="widget-contact-form-message" required rows="5"
                                         class="form-control required" placeholder="Enter your Message"></textarea>
                                 </div>
-    
+
                                 <button class="btn btn-primary" type="submit" id="form-submit"><i
                                         class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                             </form>
                         </div>
                     </div>
                 </div>
-              
+
 
             </div>
 
@@ -109,48 +109,46 @@
 
     <!-- SERVICES -->
     <section class="background-grey">
-        <div class="container">
-            <div class=" col-md-12 m-b-40 ">
-                <div class="text-center heading-text heading-section">
-                    <h2> SERVICES</h2>
+        <div class="container-fluid">
+            <div class="text-center heading-text heading-section">
+                <h2> SERVICES</h2>
+            </div>
+            <div class="row">
+                <div class="offset-md-2 col-lg-2">
+                    <div class="team-image">
+                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                    </div>
+                    <div class="text-center">
+                        <h3>Door frame Detectors</h3>
+                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                        </p>
+
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-image">
-                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                        </div>
-                        <div class="text-center">
-                            <h3>Door frame Detectors</h3>
-                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                            </p>
-
-                        </div>
+                <div class="offset-md-1 col-lg-2">
+                    <div class="team-image">
+                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-image">
-                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                        </div>
-                        <div class="text-center">
-                            <h3>Door frame Detectors</h3>
-                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                            </p>
+                    <div class="text-center">
+                        <h3>Door frame Detectors</h3>
+                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                        </p>
 
-                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-image">
-                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                        </div>
-                        <div class="text-center">
-                            <h3>Door frame Detectors</h3>
-                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                            </p>
+                </div>
+                <div class=" offset-md-1 col-lg-2">
+                    <div class="team-image">
+                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                    </div>
+                    <div class="text-center">
+                        <h3>Door frame Detectors</h3>
+                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                        </p>
 
-                        </div>
                     </div>
-                
                 </div>
 
+            </div>
     </section>
 
     <section class="">

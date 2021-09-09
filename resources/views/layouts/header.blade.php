@@ -1,66 +1,56 @@
-<header id="header" data-transparent="true" class="submenu-light ">
-    <div id="topbar" class=" dark home-corporate.html submenu-light ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="top-menu">
-                        <li><a href="#">Phone: +1 (234) 567-890</a></li>
-                        <li><a href="#">Email: contact@inspiro-media.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 d-none d-sm-block">
-                    <div class="social-icons social-icons-colored-hover">
-                        <ul>
-                            <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="social-google"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                            <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
-                            <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li class="social-dribbble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<header id="header" class="light header-logo-center">
+    <div class="header-inner background-grey">
+        <div class="container"> 
+            <div class="header-extras">
+                <ul>
+                   
 
-    <div class="header-inner">
-        <div class="container">
-            <!--Logo-->
-            <div id="logo">
-                <a href="scord.html">
-                    <img src="images/scordimg/Scord.png" class="pb-2" alt="">
-                </a>
+                    <li class="mr-2 d-sm-block d-lg-none d-xl-none ">
+                        <a class="btn btn-sm text-white" href="tel:+918689888666"> <i class="icon-phone mr-1"></i> Call Us</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="https://wa.link/n8903u" target="_blank" style="background-color:#3fe75d; border-style:none" class="btn btn-sm text-white"> <i class="fab fa-whatsapp mr-1"></i> Whatsapp</a>
+                    </li>
+                    <li class="mr-2">
+                        <a class="btn btn-sm text-white" target="_blank" style="background-color:#e34133; border-style:none" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@astuteconsultants.in"><i class="fa fa-envelope mr-1"></i>email</a>
+                    </li>
+                </ul>
             </div>
 
-            <div id="mainMenu-trigger"> <a class="lines-button x"><span class="lines"></span></a> </div>
-            <!--end: Navigation Resposnive Trigger-->
-            <!--Navigation-->
-            <div id="mainMenu">
+
+            <div id="mainMenu-trigger">
+                <a class="lines-button x"><span class="lines"></span></a>
+            </div>
+
+
+            <div id="mainMenu" style="min-height: 0px;" class="">
                 <div class="container">
                     <nav>
+
                         <ul>
-                            <li><a href="scord.html">Home</a></li>
-                            <li class="dropdown"><a href="scordaboutus.html">About Us</a>
+                            <li class="mr-3"><img src="{{{asset('images/Scord.png')}}}" alt="" width="120px"></li>
+                            <li class="mt-3"><a href="#header">Home</a></li>
+                            <li class="mt-3"><a href="#aboutus">About Us</a>
+                               
                             </li>
-                            <li class="dropdown"><a href="#">Services</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Armed and Unarmed Forces</a></li>
-                                    <li><a href="scordservices_sec_off.html">Security Officers</a></li>
-                                    <li><a href="#">Bouncers Security Guards</a></li>
-                                </ul>
+                            <li class="mt-3"><a href="#services">Our Services</a>
+                               
                             </li>
-                            <li class=""><a href="scordtraining.html">Our Clients</a></li>
-                            <li class=""><a href="scordcontactus.html">Contact Us</a>
+                            <li class="mt-3"><a href="#contactus">Contact Us</a>
+                               
                             </li>
+                            <li class="mt-3"><a href="#useful">Our Clients</a>
+                               
+                            </li>
+                        </ul>
+
+                        <ul>
+                           
                         </ul>
                     </nav>
                 </div>
             </div>
-            <!--end: Navigation-->
+
         </div>
     </div>
 </header>
