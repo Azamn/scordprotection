@@ -1,344 +1,339 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="body-inner">
-
-      
-        <!-- Inspiro Slider -->
-        <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
-            <!-- Slide 1 -->
-            <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
-                <div class="bg-overlay"></div>
-                <div class="container">
-                    <div class="slide-captions text-center text-light">
-                        <!-- Captions -->
-                        <h2>SCORD</h2>
-                        <!-- end: Captions -->
-                    </div>
+<div class="body-inner">
+  
+    <!-- Inspiro Slider -->
+    <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
+        <!-- Slide 1 -->
+        <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="slide-captions text-center text-light">
+                    <!-- Captions -->
+                    <h2>SCORD</h2>
+                    <!-- end: Captions -->
                 </div>
             </div>
-            <!-- end: Slide 1 -->
-            <!-- Slide 2 -->
-            <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
-                <div class="bg-overlay"></div>
-                <div class="container">
-                    <div class="slide-captions text-center text-light">
-                        <!-- Captions -->
-                        <h2>SCORD</h2>
-                        <button type="button" class="btn btn-purple">Explore more</button>
-                        <!-- end: Captions -->
-                    </div>
-                </div>
-            </div>
-            <!-- end: Slide 2 -->
         </div>
-        <!--end: Inspiro Slider -->
-
-        <!-- About us -->
-        <section>
+        <!-- end: Slide 1 -->
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
+            <div class="bg-overlay"></div>
             <div class="container">
-                <div class="row">
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="text-center heading-text heading-section">
-                                <h2>SCORD</h2>
-
-                            </div>
-
-                            <div>
-                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                                ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
-                                molestie ipsum volutpat quis. A true story, that never
-                                been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
-                                facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
-                                sagittis, sem quis lacinia faucibus, orci ipsum gravida
-                                tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                                volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
-                                Pellentesque ipsum erat, facilisis ut venenatis
-                                eu, sodales vel dolor.
-                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                                ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
-                                molestie ipsum volutpat quis. A true story, that never
-                                been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
-                                facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
-                                sagittis, sem quis lacinia faucibus, orci ipsum gravida
-                                tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                                volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
-                                Pellentesque ipsum erat, facilisis ut venenatis
-                                eu, sodales vel dolor.
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4"><img
-                                src="{{{asset('images/scordimg/security-guard-radio-torch-illustration-78348144.jpg')}}}" width="100%"
-                                alt="Cannot show img"></div>
-                    </div>
-
+                <div class="slide-captions text-center text-light">
+                    <!-- Captions -->
+                    <h2>SCORD</h2>
+                    <button type="button" class="btn btn-purple">Explore more</button>
+                    <!-- end: Captions -->
                 </div>
             </div>
-        </section>
-        <!-- end: About us -->
+        </div>
+        <!-- end: Slide 2 -->
+    </div>
+    <!--end: Inspiro Slider -->
 
-        <!-- SERVICES -->
-        <section class="background-grey">
-            <div class="container">
-                <div class=" col-md-12 m-b-40 ">
+    <!-- About us -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
                     <div class="text-center heading-text heading-section">
-                        <h2> SERVICES</h2>
+                        <h2>SCORD</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-image">
-                                <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                            </div>
-                            <div class="text-center">
-                                <h3>Door frame Detectors</h3>
-                                <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                                </p>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-        </section>
-
-        <section class="">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5">
-                        <div class="text-center heading-text heading-section">
-                            <h2> SCORD FACILITIES MANAGEMENT </h2>
-                        </div>
-                        <ul class="list-icon list-icon-arrow-circle list-icon-colored">
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Integer molestie lorem at massa</li>
-                            <li>Facilisis in pretium nisl aliquet</li>
-                            <li>Faucibus porta lacus fringilla vel</li>
-                            <li>Aenean sit amet erat nunc</li>
-                            <li>Eget porttitor lorem</li>
-                            <li>Beautiful nature, and rare feathers!</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-7"> <img alt="" src="http://www.jaguarsecuritys.com/assets/images/why.jpg"
-                            width="70%"> </div>
-                </div>
-            </div>
-        </section>
-        <!-- end: SECTION GREY -->
-
-        <!-- Particle 1 -->
-        <section class="background-colored">
-            <div id="particles-dots" class="particles"></div>
-            <div class="container">
-                <div class="heading-text text-light text-center">
-                    <!-- <h5 class="text-uppercase">The connected
-                        <thead></thead>
-                    </h5> -->
-                    <!-- <h2 class="fw-800">Dots</h2> -->
-                    <strong>
-                        <p>Call us now at +91-9876543210 to discuss about your security requirements.</p>
-                    </strong>
-                    <!-- <a href="#" class="btn btn-light btn-roundeded">Read More</a> -->
-                </div>
-            </div>
-        </section>
-        <!-- end: Particle 1 -->
-
-        <!-- Client logo -->
-        <section class="background-grey text-center">
-            <div class="container-fluid">
-                <div class="carousel client-logos" data-items="6" data-items-sm="4" data-items-xs="3" data-items-xxs="2"
-                    data-margin="30" data-arrows="false" data-autoplay="true" data-autoplay="1" data-loop="true">
-                    <div class="d-flex mt-5 align-items-center justify-content-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/1.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/3.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/4.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/5.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/6.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/7.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/8.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/9.jpeg')}}}"> </a>
-                    </div>
-                    <div class="d-flex mt-5 align-items-center justify-content-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/10.jpeg')}}}"> </a>
-                    </div>
-                    <div class="d-flex mt-5 align-items-center justify-content-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/11.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/12.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/13.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/14.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/15.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/16.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/17.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/18.jpeg')}}}"> </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"><img alt="" src="{{{asset('images/scordimg/19.jpeg')}}}"> </a>
+                    <div>
+                        The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
+                        ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
+                        molestie ipsum volutpat quis. A true story, that never
+                        been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
+                        facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
+                        sagittis, sem quis lacinia faucibus, orci ipsum gravida
+                        tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
+                        volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
+                        Pellentesque ipsum erat, facilisis ut venenatis
+                        eu, sodales vel dolor.
+                        The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
+                        ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
+                        molestie ipsum volutpat quis. A true story, that never
+                        been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
+                        facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
+                        sagittis, sem quis lacinia faucibus, orci ipsum gravida
+                        tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
+                        volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
+                        Pellentesque ipsum erat, facilisis ut venenatis
+                        eu, sodales vel dolor.
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- end: Client logo -->
 
-        <section>
-            <div class="container">
-                <div class="text-center heading-text heading-section">
-                    <h2> CONTACT US</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h3 class="text-uppercase">Get In Touch</h3>
-                        <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
-                            turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
-                            fermentum bibendum.</p>
+                <div class="col-lg-4">
+                    <div class="call-to-action pt-2 call-to-action-dark">
                         <div class="m-t-30">
                             <form class="widget-contact-form" data-success-message-delay="40000" novalidate
                                 action="include/contact-form.php" role="form" method="post">
                                 <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="name">Name</label>
+                                    <div class="m-0 text-center text-white heading-text heading-section">
+                                        <h2 class="mb-5">Request a call back</h2>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="name" class="text-white">Name</label>
                                         <input type="text" aria-required="true" name="widget-contact-form-name" required
                                             class="form-control required name" placeholder="Enter your Name">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="email">Email</label>
-                                        <input type="email" aria-required="true" name="widget-contact-form-email"
-                                            required class="form-control required email" placeholder="Enter your Email">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-12">
-                                        <label for="subject">Your Subject</label>
+                                        <label for="subject" class="text-white">Phone Number</label>
                                         <input type="text" name="widget-contact-form-subject" required
-                                            class="form-control required" placeholder="Subject...">
+                                            class="form-control required" placeholder="Enter your Phone Number">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">Message</label>
+                                    <label for="message" class="text-white">Message</label>
                                     <textarea type="text" name="widget-contact-form-message" required rows="5"
                                         class="form-control required" placeholder="Enter your Message"></textarea>
                                 </div>
-                               
+    
                                 <button class="btn btn-primary" type="submit" id="form-submit"><i
                                         class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <h3 class="text-uppercase">Address & Map</h3>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <address>
-                                    <strong>SCORD </strong><br>
-                                    B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli -
-                                    410218. <br>
-                                    <abbr title="Phone">P:</h4> (+91) 12345-67890
-                                </address>
-                            </div>
-                        </div>
-                        <!-- Google Map -->
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7769956431175!2d73.10444331537515!3d19.029545908374946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e90a8da66bbb%3A0x1d0b485553bcad39!2ssteel%20chamber%20tower!5e0!3m2!1sen!2sin!4v1630865337184!5m2!1sen!2sin"
-                            width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+                </div>
+              
 
-                        <!-- end: Google Map -->
+            </div>
+
+        </div>
+    </section>
+    <!-- end: About us -->
+
+    <!-- SERVICES -->
+    <section class="background-grey">
+        <div class="container">
+            <div class=" col-md-12 m-b-40 ">
+                <div class="text-center heading-text heading-section">
+                    <h2> SERVICES</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-image">
+                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                        </div>
+                        <div class="text-center">
+                            <h3>Door frame Detectors</h3>
+                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                            </p>
+
+                        </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="team-image">
+                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                        </div>
+                        <div class="text-center">
+                            <h3>Door frame Detectors</h3>
+                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-image">
+                            <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                        </div>
+                        <div class="text-center">
+                            <h3>Door frame Detectors</h3>
+                            <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                            </p>
+
+                        </div>
+                    </div>
+                
+                </div>
+
+    </section>
+
+    <section class="">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="text-center heading-text heading-section">
+                        <h2> SCORD FACILITIES MANAGEMENT </h2>
+                    </div>
+                    <ul class="list-icon list-icon-arrow-circle list-icon-colored">
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Integer molestie lorem at massa</li>
+                        <li>Facilisis in pretium nisl aliquet</li>
+                        <li>Faucibus porta lacus fringilla vel</li>
+                        <li>Aenean sit amet erat nunc</li>
+                        <li>Eget porttitor lorem</li>
+                        <li>Beautiful nature, and rare feathers!</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <img alt="" src="http://www.jaguarsecuritys.com/assets/images/why.jpg" width="70%">
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- end: SECTION GREY -->
+
+    <!-- Particle 1 -->
+    <section class="background-colored">
+        <div id="particles-dots" class="particles"></div>
+        <div class="container">
+            <div class="heading-text text-light text-center">
+                <!-- <h5 class="text-uppercase">The connected
+                        <thead></thead>
+                    </h5> -->
+                <!-- <h2 class="fw-800">Dots</h2> -->
+                <strong>
+                    <p>Call us now at +91-9876543210 to discuss about your security requirements.</p>
+                </strong>
+                <!-- <a href="#" class="btn btn-light btn-roundeded">Read More</a> -->
+            </div>
+        </div>
+    </section>
+    <!-- end: Particle 1 -->
+
+    <!-- Client logo -->
+    <section class="background-grey text-center">
+        <div class="container-fluid">
+            <div class="carousel client-logos" data-items="6" data-items-sm="4" data-items-xs="3" data-items-xxs="2"
+                data-margin="30" data-arrows="false" data-autoplay="true" data-autoplay="1" data-loop="true">
+                <div class="d-flex mt-5 align-items-center justify-content-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/1.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/3.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/4.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/5.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/6.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/7.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/8.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/9.jpeg')}}}"> </a>
+                </div>
+                <div class="d-flex mt-5 align-items-center justify-content-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/10.jpeg')}}}"> </a>
+                </div>
+                <div class="d-flex mt-5 align-items-center justify-content-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/11.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/12.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/13.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/14.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/15.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/16.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/17.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/18.jpeg')}}}"> </a>
+                </div>
+                <div class="text-center">
+                    <a href="#"><img alt="" src="{{{asset('images/scordimg/19.jpeg')}}}"> </a>
                 </div>
             </div>
-        </section>
-        <!-- Footer -->
-      
-        <!-- end: Footer -->
+        </div>
+    </section>
+    <!-- end: Client logo -->
 
-    </div> 
+    <section>
+        <div class="container">
+            <div class="text-center heading-text heading-section">
+                <h2> CONTACT US</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="text-uppercase">Get In Touch</h3>
+                    <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
+                        turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
+                        fermentum bibendum.</p>
+                    <div class="m-t-30">
+                        <form class="widget-contact-form" data-success-message-delay="40000" novalidate
+                            action="include/contact-form.php" role="form" method="post">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Name</label>
+                                    <input type="text" aria-required="true" name="widget-contact-form-name" required
+                                        class="form-control required name" placeholder="Enter your Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" aria-required="true" name="widget-contact-form-email" required
+                                        class="form-control required email" placeholder="Enter your Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="subject">Your Subject</label>
+                                    <input type="text" name="widget-contact-form-subject" required
+                                        class="form-control required" placeholder="Subject...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea type="text" name="widget-contact-form-message" required rows="5"
+                                    class="form-control required" placeholder="Enter your Message"></textarea>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit" id="form-submit"><i
+                                    class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="text-uppercase">Address & Map</h3>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <address>
+                                <strong>SCORD </strong><br>
+                                B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli -
+                                410218. <br>
+                                <abbr title="Phone">P:</h4> (+91) 12345-67890
+                            </address>
+                        </div>
+                    </div>
+                    <!-- Google Map -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7769956431175!2d73.10444331537515!3d19.029545908374946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e90a8da66bbb%3A0x1d0b485553bcad39!2ssteel%20chamber%20tower!5e0!3m2!1sen!2sin!4v1630865337184!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+
+                    <!-- end: Google Map -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+
+    <!-- end: Footer -->
+
+</div>
 @endsection
-
