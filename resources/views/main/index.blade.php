@@ -261,9 +261,12 @@
             </div>
         </div>
     </section>
-    <!-- end: Client logo -->
 
-    <section>
+
+
+
+
+    <section class="">
         <div class="container">
             <div class="text-center heading-text heading-section">
                 <h2> CONTACT US</h2>
@@ -329,5 +332,85 @@
             </div>
         </div>
     </section>
+
+
+    <section class="background-grey">
+        <div class="container">
+            <div class="text-center heading-text heading-section">
+                <h2>TESTIMONIALS</h2>
+            </div>
+            <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote" data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
+                <!-- Testimonials item -->
+                <div class="testimonial-item">
+                    <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
+                    <span>Alan Monre</span>
+                    <span>CEO, Square Software</span>
+                </div>
+                <!-- end: Testimonials item-->
+                <!-- Testimonials item -->
+                <div class="testimonial-item">
+                    <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
+                    <span>Alan Monre</span>
+                    <span>CEO, Square Software</span>
+                </div>
+                <!-- end: Testimonials item-->
+                <!-- Testimonials item -->
+                <div class="testimonial-item">
+                    <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
+                    <span>Alan Monre</span>
+                    <span>CEO, Square Software</span>
+                </div>
+                <!-- end: Testimonials item-->
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+
+    <section id="feedback" class="text-dark">
+        <div class="heading-text heading-section text-center">
+            <h2>FEEDBACK</h2>
+            <p>Give Feedback to our services so that we can serve you better.</p>
+        </div>
+
+        <div class="container">
+
+            <div class="row ">
+                <div class="col-lg-6">
+                    <div class="m-t-30">
+                        <form class="widget-contact-form" id="feedback_form">
+                            <input type="hidden" name="_token" value="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" aria-required="true" required="" class="form-control required name"
+                                    placeholder="Enter your Name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea type="text" required="" rows="5" class="form-control required" name="body"
+                                    placeholder="Enter your Message"></textarea>
+                            </div>
+
+                            <button class="btn border-dark background-grey text-dark feedback_form_button" type="submit"
+                                id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Feedback</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 text-center">
+                    <div class=" mb-5">
+                        <img src="https://windshieldcare.in/assets/Main/images/carshieldimg/feedback.png" alt=""
+                            width="70%">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
 </div>
 @endsection

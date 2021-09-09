@@ -56,16 +56,8 @@
                                 <textarea type="text" name="widget-contact-form-message" rows="5" class="form-control "
                                     placeholder="Enter your Message"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="message">Attachment file<small>*</small></label>
-                                <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                                <input type="file" aria-required="true" name="widget-contact-form-attachment"
-                                    class="form-control required" />
-                            </div>
-                            <!--   <div class="form-group">
-                                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                    <div class="g-recaptcha" data-sitekey="6LddCxAUAAAAAKOg0-U6IprqOZ7vTfiMNSyQT2-M"></div>
-                                </div> -->
+                           
+                            
                             <button class="btn btn-primary" type="submit" id="form-submit"><i
                                     class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                         </form>
