@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main.index');
+    return view('main.contactus');
 });
 
 Auth::routes();

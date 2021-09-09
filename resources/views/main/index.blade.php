@@ -329,9 +329,5 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-
-    <!-- end: Footer -->
-
 </div>
 @endsection
