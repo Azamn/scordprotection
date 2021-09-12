@@ -25,3 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
+
+Route::get('/admin/login', function () {
+    return view('admin.admin-login');
+});
