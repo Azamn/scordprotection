@@ -112,8 +112,7 @@
                 </script>
             </div>
         </div>
-        <!-- Page Header Ends                              -->
-        <!-- Page Body Start-->
+        
         <div class="page-body-wrapper sidebar-icon">
             <!-- Page Sidebar Start-->
             <div class="sidebar-wrapper">
