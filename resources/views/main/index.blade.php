@@ -188,7 +188,7 @@
                     </h5> -->
                 <!-- <h2 class="fw-800">Dots</h2> -->
                 <strong>
-                    <p>Call us now at +91-9876543210 to discuss about your security requirements.</p>
+                    <p>Call us now at +91-8452857451 to discuss about your security requirements.</p>
                 </strong>
                 <!-- <a href="#" class="btn btn-light btn-roundeded">Read More</a> -->
             </div>
@@ -318,7 +318,7 @@
                                 <strong>SCORD </strong><br>
                                 B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli -
                                 410218. <br>
-                                <abbr title="Phone">P:</h4> (+91) 12345-67890
+                                <abbr title="Phone">P:</h4> (+91) 84528 57451
                             </address>
                         </div>
                     </div>
@@ -364,11 +364,7 @@
             </div>
         </div>
     </section>
-
-
-
-    
-
+  
 
     <section id="feedback" class="text-dark">
         <div class="heading-text heading-section text-center">
