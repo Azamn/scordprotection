@@ -50,20 +50,6 @@
         <!-- Page Header Start-->
         <div class="page-header">
             <div class="header-wrapper row m-0">
-                <form class="form-inline search-full" action="#" method="get">
-                    <div class="form-group w-100">
-                        <div class="Typeahead Typeahead--twitterUsers">
-                            <div class="u-posRelative">
-                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                    placeholder="Search Cuba .." name="q" title="" autofocus>
-                                <div class="spinner-border Typeahead-spinner" role="status"><span
-                                        class="sr-only">Loading...</span></div><i class="close-search"
-                                    data-feather="x"></i>
-                            </div>
-                            <div class="Typeahead-menu"></div>
-                        </div>
-                    </div>
-                </form>
                 <div class="header-logo-wrapper">
                     <div class="logo-wrapper"><a href="index.html"><img class="img-fluid"
                                 src="{{{asset('images/logo.jpeg')}}}" alt=""></a></div>
@@ -117,8 +103,8 @@
             <!-- Page Sidebar Start-->
             <div class="sidebar-wrapper">
                 <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
-                            src="{{{asset('Admin/assets/images/logo/logo.png')}}}" alt=""><img
-                            class="img-fluid for-dark" src="{{{asset('Admin/assets/images/logo/logo_dark.png')}}}"
+                            src="{{{asset('images/scordimg/Scord.png')}}}" alt=""><img
+                            class="img-fluid for-dark" src="{{{asset('images/scordimg/Scord.png')}}}"
                             alt=""></a>
                     <div class="back-btn"><i class="fa fa-angle-left"></i></div>
                     <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i>
@@ -212,13 +198,12 @@
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <div class="media-body right-chart-content">
-                                            <h4>$95,900<span class="new-box">Hot</span></h4><span>Purchase Order
-                                                Value</span>
+                                            <h4>Request<span class="new-box">Hot</span></h4><span>1</span>
                                         </div>
                                         <div class="knob-block text-center">
                                             <input class="knob1" data-width="10" data-height="70" data-thickness=".3"
                                                 data-angleoffset="0" data-linecap="round" data-fgcolor="#7366ff"
-                                                data-bgcolor="#eef5fb" value="60">
+                                                data-bgcolor="#eef5fb" value="70">
                                         </div>
                                     </div>
                                 </div>
@@ -287,7 +272,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="right-chart-content">
-                                                        <h4>1001</h4><span>purchase </span>
+                                                        <h4>10</h4><span>Total Request</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -301,7 +286,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="right-chart-content">
-                                                        <h4>1005</h4><span>Sales</span>
+                                                        <h4>5</h4><span>Request Completed</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -315,7 +300,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="right-chart-content">
-                                                        <h4>100</h4><span>Sales return</span>
+                                                        <h4>5</h4><span>Request Pending</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -329,7 +314,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="right-chart-content">
-                                                        <h4>101</h4><span>Purchase ret</span>
+                                                        <h4>15</h4><span>Feedback</span>
                                                     </div>
                                                 </div>
                                             </div>
