@@ -7,31 +7,31 @@
     <meta name="description" content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{asset('Assets/Admin//images/favicon.png')}}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{asset('Assets/Admin//images/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('Admin//images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('Admin//images/favicon.png')}}" type="image/x-icon">
     <title>Cuba - Premium Admin Template</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/fontawesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/fontawesome.css')}}">
     <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/icofont.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/icofont.css')}}">
     <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/themify.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/themify.css')}}">
     <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/flag-icon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/flag-icon.css')}}">
     <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/feather-icon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/feather-icon.css')}}">
     <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/sweetalert2.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/sweetalert2.css')}}">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/vendors/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/vendors/bootstrap.css')}}">
     <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/style.css')}}">
-    <link id="color" rel="stylesheet" href="{{asset('Assets/Admin//css/color-1.css')}}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/style.css')}}">
+    <link id="color" rel="stylesheet" href="{{asset('Admin//css/color-1.css')}}" media="screen">
     <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Admin//css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin//css/responsive.css')}}">
   </head>
   <body>
     <!-- login page start-->
@@ -43,10 +43,10 @@
               <div class="login-main">
                 <div>
                     <a class="logo text-center" href="index.html">
-                    <img class="img-fluid for-light" src="{{asset('Assets/Admin/images/feimages/FELogo.png')}}" alt="looginpage">
-                    <img class="img-fluid for-dark" src="{{asset('Assets/Admin/images/feimages/FELogo.png')}}" alt="looginpage"></a>
+                    <img class="img-fluid for-light" src="{{asset('images/scordimg/Scord.png')}}" alt="looginpage">
+                    <img class="img-fluid for-dark" src="{{asset('images/scordimg/Scord.png')}}" alt="looginpage"></a>
                   </div>
-                <form class="theme-form" method="POST" action="{{ Route('admin.login') }}">
+                <form class="theme-form" method="POST">
                     @csrf
                   <h4>Sign In</h4>
                   <p>Enter your email & password to login</p>
@@ -74,20 +74,20 @@
         </div>
       </div>
       <!-- latest jquery-->
-      <script src="{{asset('Assets/Admin//js/jquery-3.5.1.min.js')}}"></script>
+      <script src="{{asset('Admin//js/jquery-3.5.1.min.js')}}"></script>
       <!-- Bootstrap js-->
-      <script src="{{asset('Assets/Admin//js/bootstrap/popper.min.js')}}"></script>
-      <script src="{{asset('Assets/Admin//js/bootstrap/bootstrap.js')}}"></script>
+      <script src="{{asset('Admin//js/bootstrap/popper.min.js')}}"></script>
+      <script src="{{asset('Admin//js/bootstrap/bootstrap.js')}}"></script>
       <!-- feather icon js-->
-      <script src="{{asset('Assets/Admin//js/icons/feather-icon/feather.min.js')}}"></script>
-      <script src="{{asset('Assets/Admin//js/icons/feather-icon/feather-icon.js')}}"></script>
+      <script src="{{asset('Admin//js/icons/feather-icon/feather.min.js')}}"></script>
+      <script src="{{asset('Admin//js/icons/feather-icon/feather-icon.js')}}"></script>
       <!-- Sidebar jquery-->
-      <script src="{{asset('Assets/Admin//js/config.js')}}"></script>
+      <script src="{{asset('Admin//js/config.js')}}"></script>
       <!-- Plugins JS start-->
-      <script src="{{asset('Assets/Admin//js/sweet-alert/sweetalert.min.js')}}"></script>
+      <script src="{{asset('Admin//js/sweet-alert/sweetalert.min.js')}}"></script>
       <!-- Plugins JS Ends-->
       <!-- Theme js-->
-      <script src="{{asset('Assets/Admin//js/script.js')}}"></script>
+      <script src="{{asset('Admin//js/script.js')}}"></script>
       <!-- login js-->
       <!-- Plugin used-->
       <script>
