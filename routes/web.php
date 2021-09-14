@@ -24,3 +24,15 @@ Route::view('/service-page', 'main.ourservice')->name('our-service');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/login', function () {
+    return view('admin.Login.admin-login');
+});
+
+Route::get('/admin/feature', function () {
+    return view('admin.Feature.feature-index');
+});

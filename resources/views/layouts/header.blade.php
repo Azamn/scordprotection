@@ -6,18 +6,18 @@
 
 
                     <li class="mr-3 d-sm-block d-lg-none d-xl-none ">
-                        <a class="btn btn-sm text-white" href="tel:+918689888666"> <i class="icon-phone mr-1"></i> Call
+                        <a class="btn btn-sm text-white" href="tel:+918452857451"> <i class="icon-phone mr-1"></i> Call
                             Us</a>
                     </li>
                     <li class="mr-3">
-                        <a href="https://wa.link/n8903u" target="_blank"
+                        <a href="https://mywa.link/3zfe8xgi" target="_blank"
                             style="background-color:#3fe75d; border-style:none" class="btn  btn-sm text-white"> <i
                                 class="fab fa-whatsapp mr-1"></i> Whatsapp</a>
                     </li>
                     <li class="mr-3">
                         <a class="btn btn-sm text-white" target="_blank"
                             style="background-color:#e34133; border-style:none"
-                            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@astuteconsultants.in"><i
+                            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=info@scordprotection.in"><i
                                 class="fa fa-envelope mr-1"></i>email</a>
                     </li>
                 </ul>
