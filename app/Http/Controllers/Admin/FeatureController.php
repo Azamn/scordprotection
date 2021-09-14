@@ -20,7 +20,7 @@ class FeatureController extends Controller
     public function create(Request $request){
 
         $rules = [
-            'name' => 'required|string|regex:/^[a-zA-Z ]*$/|max:30',
+            'name' => 'required|string|regex:/^[a-zA-Z ].*$/|',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -34,6 +34,8 @@ class FeatureController extends Controller
            $features->status = 1;
 
            $features->save();
+
+           return response()->json(['status' => true, 'message' => 'Feature Added Successfully.']);
         }
 
     }

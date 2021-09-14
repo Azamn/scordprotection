@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\AboutUsController;
-use App\Http\Controllers\Admin\FeatureController;
-use App\Http\Controllers\Admin\GetInTouchController;
-use App\Http\Controllers\Admin\OurClietsController;
-use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\OurClietsController;
+use App\Http\Controllers\Admin\GetInTouchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,6 @@ Route::post('/create/services',[ServiceController::class, 'create']);
 /** Route :: features */
 Route::get('/get-all/features', [FeatureController::class, 'getAll']);
 Route::post('/create/feature',[FeatureController::class, 'create']);
+
+
+Route::get('/home',[HomePageController::class, 'index']);

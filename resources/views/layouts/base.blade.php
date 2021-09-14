@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
-    <title>SCORD Security</title>
+    <title>SCORD PROTECTION</title>
     <!-- Stylesheets & Fonts -->
     <link href="{{{asset('css/plugins.css') }}}" rel="stylesheet">
     <link href="{{{asset('css/style.css') }}}" rel="stylesheet">
@@ -32,7 +32,7 @@
     <!--Particles-->
     <script src="{{{asset('plugins/particles/particles.js')}}}"></script>
     <script src="{{{asset('plugins/particles/particles-dots.js')}}}"></script>
-    
+
     @yield('js')
 </body>
 

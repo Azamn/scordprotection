@@ -23,7 +23,7 @@ class OurClietsController extends Controller
 
         $rules = [
             'name' => 'required|string|regex:/^[a-zA-Z ]*$/|max:30',
-            'description' => 'required|string',
+            'description' => 'sometimes|required|string',
             'image' => 'sometimes|required'
         ];
 
@@ -36,8 +36,7 @@ class OurClietsController extends Controller
             $ourClient = new OurClient();
             $ourClient->name = $request->name;
             $ourClient->description = $request->description;
-            $ourClient->stats = 1;
-            $ourClient->save();
+            $ourClient->status = 1;
 
             if($request->has('image')){
                 $ourClient->addMediaFromRequest('image')->toMediaCollection('our-client');

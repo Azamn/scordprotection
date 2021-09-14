@@ -111,7 +111,8 @@
     <section class="background-grey">
         <div class="container-fluid">
             <div class="text-center heading-text heading-section">
-                <h2> SERVICES</h2>
+                <h2> Our Featured Security Services </h2>
+                <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
                 <div class="offset-md-2 col-lg-2">
@@ -188,7 +189,7 @@
                     </h5> -->
                 <!-- <h2 class="fw-800">Dots</h2> -->
                 <strong>
-                    <p>Call us now at +91-9876543210 to discuss about your security requirements.</p>
+                    <p>CALL US NOW AT +91-8452857451 TO DISCUSS YOUR SECURITY REQUIREMENTS</p>
                 </strong>
                 <!-- <a href="#" class="btn btn-light btn-roundeded">Read More</a> -->
             </div>
@@ -367,7 +368,7 @@
 
 
 
-    
+
 
 
     <section id="feedback" class="text-dark">

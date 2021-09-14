@@ -40,10 +40,12 @@ class ServiceController extends Controller
             $service->status = 1;
 
             if ($request->has('image')) {
-                $service->addAllMediaFromRequest('image')->toMediaCollection('service');
+                $service->addMediaFromRequest('image')->toMediaCollection('service');
             }
 
             $service->save();
+
+            return response()->json(['status' => true, 'message' => 'Service Added Successfully.']);
         }
     }
 }
