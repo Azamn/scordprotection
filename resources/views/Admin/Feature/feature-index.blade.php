@@ -25,8 +25,8 @@
                     <a class="btn btn-primary" href="/admin/features/create"><i class="fa fa-plus"></i> Add Feature</a>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive tag-table">
-                        <table class="display dataTable" id="basic-1">
+                    <div class="table-responsive">
+                        <table class="display" id="basic-1">
                             <thead>
                             <tr >
                                 <th>#</th>
@@ -35,25 +35,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($features as $f)
-                                <tr id="{{$f->id}}">
+                                <tr >
                                     <td >
-                                        @if($f->getFirstMedia('product-feature'))
-                                            <img src="{{$f->getFirstMedia('product-feature')->getUrl('product-feature-thumbnail')}}"  style="height: 60px;width: 100px" alt="not found">
-                                        @endif
+                                      askdhja
                                     </td>
                                     <td>
-                                        <h6> {{$f->name}}</h6>
+                                        dsfg
                                     </td>
                                     <td>
                                         <a class="btn btn-sm btn-outline-success" type="button"
-                                           href="/admin/features/{{$f->id}}/edit">Edit</a>
+                                           >Edit</a>
                                         <a class="btn btn-sm btn-outline-danger" type="button"
-                                           onclick="tag_delete({{$f->id}})">Delete</a>
+                                          >Delete</a>
                                     </td>
                                 </tr>
-                            @endforeach
-
                             </tbody>
                         </table>
                     </div>

@@ -29,3 +29,7 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/login', function () {
     return view('admin.Login.admin-login');
 });
+
+Route::get('/admin/feature', function () {
+    return view('admin.Feature.feature-index');
+});
