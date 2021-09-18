@@ -29,9 +29,8 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Contact</th>
-                            <th scope="col">Complete</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -39,16 +38,25 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>Alexander</td>
-                            <td>Orton</td>
-                            <td> <div class="media mb-2">
-                                <div class="media-body text-end">
-                                  <label class="switch">
-                                    <input type="checkbox" data-bs-original-title="" title=""><span class="switch-state"></span>
-                                  </label>
-                                </div>
-                              </div></td>
-                            <td> <button class="btn btn-primary" type="submit">Show</button>
-                                <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
+                            <td>
+                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, 
+                                vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story,
+                                 that never been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat,
+                            </td>
+                            <td> <button class="btn btn-primary m-2" type="submit">Edit</button>
+                                <button class="btn btn-danger m-2" onclick="tag_delete()" type="submit">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Alexander</td>
+                            <td>
+                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, 
+                                vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story,
+                                 that never been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat,
+                            </td>
+                            <td> <button class="btn btn-primary m-2" type="submit">Edit</button>
+                                <button class="btn btn-danger m-2" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>
                     </tbody>

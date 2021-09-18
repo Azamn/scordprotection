@@ -1,37 +1,38 @@
 @extends('Admin.layouts.base')
 
 @section('content')
-<div class="page-body">
-    <div class="container-fluid">
+<div class="page-body-wrapper sidebar-icon">
+
+    <!-- Page Sidebar Ends-->
+    <div class="page-body">
+      <div class="container-fluid">
         <div class="page-title">
-            <div class="row">
-                <div class="col-6">
-                </div>
-                <div class="col-6">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard"> <i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item active">Features</li>
-                        {{--              <li class="breadcrumb-item active">Product list</li>--}}
-                    </ol>
-                </div>
+          <div class="row">
+            <div class="col-6">
             </div>
+            <div class="col-6">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">                                       <i data-feather="home"></i></a></li>
+                <li class="breadcrumb-item">Apps</li>
+                <li class="breadcrumb-item active">Users</li>
+              </ol>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Container-fluid starts-->
-    <div class="container-fluid">
+      </div>
+      <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-
-                <h3>Request List</h3>
+                <h3>Feedback List</h3>
             </div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Contact</th>
-                            <th scope="col">Complete</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Feedback Text</th>
+                            <th scope="col">Show on Website</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -39,7 +40,7 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>Alexander</td>
-                            <td>Orton</td>
+                            <td> 	Happy with the work done,quick service,professional staff</td>
                             <td> <div class="media mb-2">
                                 <div class="media-body text-end">
                                   <label class="switch">
@@ -47,7 +48,7 @@
                                   </label>
                                 </div>
                               </div></td>
-                            <td> <button class="btn btn-primary" type="submit">Show</button>
+                            <td> 
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>
@@ -56,12 +57,14 @@
             </div>
         </div>
     </div>
-    <!-- Container-fluid Ends-->
-</div>
+    </div>
+  </div>
 @endsection
+
 @section('js')
+
 <script>
-    function tag_delete(request_id) {
+    function tag_delete(feedback_id) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -75,13 +78,13 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: 'DELETE',
-                    url: "/admin/request/" + request_id,
+                    url: "/admin/feedback/" + feedback_id,
                     data: {
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function (data) {
-                        $('#' + request_id).fadeOut('fast', function () {
-                            $('#' + request_id).remove();
+                        $('#' + feedback_id).fadeOut('fast', function () {
+                            $('#' + feedback_id).remove();
                         });
                         $.notify({
                             // title:'Title',

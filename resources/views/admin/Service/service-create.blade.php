@@ -27,16 +27,22 @@
                     <div class="card-header">
                         <h5>Features Details</h5>
                     </div>
-                    <form method="post" action="{{ route('features.store') }}" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" >
+                    <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" >
                         @csrf
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Name</label>
+                                        <label class="col-sm-3 col-form-label">Title</label>
                                         <div class="col-sm-9">
-                                            <input name="name" class="form-control" type="text" placeholder="Feature Name" required="">
+                                            <input name="name" class="form-control" type="text" placeholder="Service Title" required="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Description</label>
+                                        <div class="col-sm-9">
+                                            <input name="name" class="form-control" type="text" placeholder="Service Descrition" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">

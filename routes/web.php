@@ -38,3 +38,26 @@ Route::get('/admin/request', function () {
 Route::get('/admin/request-completed', function () {
     return view('admin.Request.request-list-completed');
 });
+
+
+Route::get('/admin/contact', function () {
+    return view('admin.User.contact');
+});
+
+
+Route::get('/admin/feedback', function () {
+    return view('admin.User.feedback');
+});
+
+
+Route::get('/admin/services', function () {
+    return view('admin.Service.service-list');
+});
+
+Route::get('/admin/service-create', function () {
+    return view('admin.Service.service-create');
+});
+
+Route::get('/admin/service-edit', function () {
+    return view('admin.Service.service-edit');
+});

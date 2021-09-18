@@ -21,11 +21,15 @@
                         <a class="nav-link  " href="/admin/request-completed"><i data-feather="box"></i><span>Completed Request</span></a>
                     </li>
                     <li class="sidebar-list">
-                        <a class="nav-link" href="/admin/categories"><i
+                        <a class="nav-link" href="/admin/services"><i
+                                data-feather="monitor"></i><span>Services</span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a class="nav-link" href="/admin/contact"><i
                                 data-feather="git-merge"></i><span>Contact</span></a>
                     </li>
                     <li class="sidebar-list">
-                        <a class="nav-link " href="/admin/users"><i data-feather="users"></i><span>Feedback</span></a>
+                        <a class="nav-link " href="/admin/feedback"><i data-feather="users"></i><span>Feedback</span></a>
                     </li>
               
                     <li class="sidebar-list">
