@@ -30,6 +30,11 @@ Route::get('/admin/login', function () {
     return view('admin.Login.admin-login');
 });
 
-Route::get('/admin/feature', function () {
-    return view('admin.Feature.feature-index');
+Route::get('/admin/request', function () {
+    return view('admin.Request.request-list');
+});
+
+
+Route::get('/admin/request-completed', function () {
+    return view('admin.Request.request-list-completed');
 });
