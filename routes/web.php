@@ -26,6 +26,11 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/clients', function () {
+    return view('main.clients');
+});
+
+
 Route::get('/admin/login', function () {
     return view('admin.Login.admin-login');
 });

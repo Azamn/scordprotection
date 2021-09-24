@@ -45,7 +45,7 @@
                             <li class="mt-3"><a href="#contactus">Contact Us</a>
 
                             </li>
-                            <li class="mt-3"><a href="#useful">Our Clients</a>
+                            <li class="mt-3"><a href="/clients">Our Clients</a>
 
                             </li>
                         </ul>

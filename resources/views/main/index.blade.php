@@ -154,8 +154,8 @@
     <section class="">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="text-center heading-text heading-section">
+                <div class="col-lg-6">
+                    <div class="text-left heading-text heading-section">
                         <h2> SCORD FACILITIES MANAGEMENT </h2>
                     </div>
                     <ul class="list-icon list-icon-arrow-circle list-icon-colored">
@@ -168,8 +168,8 @@
                         <li>Beautiful nature, and rare feathers!</li>
                     </ul>
                 </div>
-                <div class="col-lg-7">
-                    <img alt="" src="http://www.jaguarsecuritys.com/assets/images/why.jpg" width="70%">
+                <div class="col-lg-6">
+                    <img alt="" src="{{asset('images/Facilities.png')}}" width="80%">
                 </div>
 
 
@@ -364,7 +364,7 @@
             </div>
         </div>
     </section>
-  
+
 
     <section id="feedback" class="text-dark">
         <div class="heading-text heading-section text-center">
