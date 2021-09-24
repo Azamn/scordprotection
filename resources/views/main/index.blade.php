@@ -306,28 +306,28 @@
     </section>
 
 
-    <section class="background-grey">
+    <section class="background-grey p-50">
         <div class="container">
             <div class="text-center heading-text heading-section">
                 <h2>TESTIMONIALS</h2>
             </div>
-            <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote" data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
+            <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
-                <div class="testimonial-item">
+                <div class="testimonial-item pt-0">
                     <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
                     <span>Alan Monre</span>
                     <span>CEO, Square Software</span>
                 </div>
                 <!-- end: Testimonials item-->
                 <!-- Testimonials item -->
-                <div class="testimonial-item">
+                <div class="testimonial-item pt-0">
                     <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
                     <span>Alan Monre</span>
                     <span>CEO, Square Software</span>
                 </div>
                 <!-- end: Testimonials item-->
                 <!-- Testimonials item -->
-                <div class="testimonial-item">
+                <div class="testimonial-item pt-0">
                     <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
                     <span>Alan Monre</span>
                     <span>CEO, Square Software</span>
