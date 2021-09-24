@@ -25,31 +25,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
+                    @foreach (@$aboutUsData as $about )
+
                     <div class="text-center heading-text heading-section">
-                        <h2>SCORD PROTECTION FORCE</h2>
+                        <h2>{{ $about['title'] }}</h2>
                     </div>
                     <div>
-                        The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                        ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
-                        molestie ipsum volutpat quis. A true story, that never
-                        been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
-                        facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
-                        sagittis, sem quis lacinia faucibus, orci ipsum gravida
-                        tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                        volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
-                        Pellentesque ipsum erat, facilisis ut venenatis
-                        eu, sodales vel dolor.
-                        The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                        ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id
-                        molestie ipsum volutpat quis. A true story, that never
-                        been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, <br> <br>
-                        facilisis ut venenatis eu, sodales vel dolor. The most happiest time of the day!. Morbi
-                        sagittis, sem quis lacinia faucibus, orci ipsum gravida
-                        tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                        volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare orci.
-                        Pellentesque ipsum erat, facilisis ut venenatis
-                        eu, sodales vel dolor.
+                        {{ $about['description'] }}
                     </div>
+                    @endforeach
                 </div>
 
                 <div class="col-lg-4">

@@ -29,7 +29,7 @@ class HomePageController extends Controller
             array_push($aboutUsData, $data);
         }
 
-        // return $aboutUsData;
+        //return $aboutUs;
 
         $servicesData = [];
         $services = MasterService::with('media')->where('status', 1)->get();
@@ -76,9 +76,9 @@ class HomePageController extends Controller
             array_push($ourClientData, $data);
         }
 
-        // return $ourClientData;
+        //return $ourClientData;
 
-        return view("main/index",compact('aboutUsData','servicesData','featuresData','ourClientData'));
+        return view("main.index",compact('aboutUsData','servicesData','featuresData','ourClientData'));
 
     }
 }

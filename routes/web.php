@@ -2,18 +2,20 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomePageController;
 
 
-Route::get('/', function () {
-    return view('main.index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('main.index');
+// })->name('index');
 
-Route::view('/contact-us/page', 'main.contactus')->name('contact-us');
-Route::view('/service-page', 'main.ourservice')->name('our-service');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomePageController::class, 'index'])->name('home');
+
+Route::view('/contact-us/page', 'main.contactus')->name('contact-us');
+Route::view('/service-page', 'main.ourservice')->name('our-service');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
