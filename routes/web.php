@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 
 
-// Route::get('/', function () {
-//     return view('main.index');
-// })->name('index');
+Route::get('/', function () {
+    return view('main.index');
+});
 
 
 Auth::routes();
