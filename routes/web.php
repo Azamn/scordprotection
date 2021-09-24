@@ -30,7 +30,6 @@ Route::get('/services', function () {
 });
 
 
-
 Route::get('/admin/login', function () {
     return view('admin.Login.admin-login');
 });
