@@ -31,6 +31,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Customer Name</th>
                             <th scope="col">Customer Contact</th>
+                            <th scope="col">Message</th>
                             <th scope="col">Complete</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -40,6 +41,7 @@
                             <th scope="row">1</th>
                             <td>Alexander</td>
                             <td>Orton</td>
+                            <td>Message</td>
                             <td> <div class="media mb-2">
                                 <div class="media-body text-end">
                                   <label class="switch">
@@ -47,7 +49,7 @@
                                   </label>
                                 </div>
                               </div></td>
-                            <td> <button class="btn btn-primary" type="submit">Show</button>
+                            <td>
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>

@@ -16,20 +16,7 @@
                 </div>
             </div>
         </div>
-        <!-- end: Slide 1 -->
-        <!-- Slide 2 -->
-        <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
-            <div class="bg-overlay"></div>
-            <div class="container">
-                <div class="slide-captions text-center text-light">
-                    <!-- Captions -->
-                    <h2>SCORD</h2>
-                    <button type="button" class="btn btn-purple">Explore more</button>
-                    <!-- end: Captions -->
-                </div>
-            </div>
-        </div>
-        <!-- end: Slide 2 -->
+
     </div>
     <!--end: Inspiro Slider -->
 
