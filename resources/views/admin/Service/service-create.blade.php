@@ -7,12 +7,12 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-6">
-                    <h3>Washing Instructions</h3>
+                    <h3>Features</h3>
                 </div>
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"><i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item"><a href="/admin/instruction"> Instruction</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/features"> Features</a></li>
                         <li class="breadcrumb-item active">Create</li>
                     </ol>
                 </div>
@@ -25,18 +25,24 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Instruction Details</h5>
+                        <h5>Features Details</h5>
                     </div>
-                    <form method="post" action="{{ route('instructions.store') }}" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data">
+                    <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" >
                         @csrf
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Name</label>
+                                        <label class="col-sm-3 col-form-label">Title</label>
                                         <div class="col-sm-9">
-                                            <input name="name" class="form-control" type="text" placeholder="Instruction Name" required="">
+                                            <input name="name" class="form-control" type="text" placeholder="Service Title" required="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Description</label>
+                                        <div class="col-sm-9">
+                                            <input name="name" class="form-control" type="text" placeholder="Service Descrition" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -7,7 +7,6 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-6">
-                    <h3>Features</h3>
                 </div>
                 <div class="col-6">
                     <ol class="breadcrumb">
@@ -25,9 +24,9 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Features Details</h5>
+                        <h5>Client Details</h5>
                     </div>
-                    <form method="post" action="{{ route('features.store') }}" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" >
+                    <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" >
                         @csrf
                         <div class="card-body">
                             <div class="row">
@@ -36,9 +35,10 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Name</label>
                                         <div class="col-sm-9">
-                                            <input name="name" class="form-control" type="text" placeholder="Feature Name" required="">
+                                            <input name="name" class="form-control" type="text" placeholder="Service Title" required="">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Image</label>
                                         <div class="col-sm-9">
