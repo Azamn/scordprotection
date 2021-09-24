@@ -25,13 +25,17 @@
                                 data-feather="monitor"></i><span>Services</span></a>
                     </li>
                     <li class="sidebar-list">
+                        <a class="nav-link" href="/admin/clients"><i
+                                data-feather="monitor"></i><span>Clients</span></a>
+                    </li>
+                    <li class="sidebar-list">
                         <a class="nav-link" href="/admin/contact"><i
                                 data-feather="git-merge"></i><span>Contact</span></a>
                     </li>
                     <li class="sidebar-list">
                         <a class="nav-link " href="/admin/feedback"><i data-feather="users"></i><span>Feedback</span></a>
                     </li>
-              
+
                     <li class="sidebar-list">
                         <a class="nav-link"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"

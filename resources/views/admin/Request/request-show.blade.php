@@ -22,52 +22,13 @@
         <div class="card">
             <div class="card-header">
 
-                <h3>Service List</h3>
-                <div class="mt-4">
-                    <a class="btn btn-primary" href="/admin/client-create">Add Service + </a>
-                </div>
+                <h3>Request Details</h3>
             </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Alexander</td>
-                            <td>
-                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                                ipsum gravida tortor,
-                                vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                                volutpat quis. A true story,
-                                that never been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat,
-                            </td>
-                            <td> <a class="btn btn-primary m-2" href="/admin/service-edit">Edit</a>
-                                <button class="btn btn-danger m-2" onclick="tag_delete()" type="submit">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Alexander</td>
-                            <td>
-                                The most happiest time of the day!. Morbi sagittis, sem quis lacinia faucibus, orci
-                                ipsum gravida tortor,
-                                vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum
-                                volutpat quis. A true story,
-                                that never been told!. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat,
-                            </td>
-                            <td> <a class="btn btn-primary m-2" href="/admin/service-edit">Edit</a>
-                                <button class="btn btn-danger m-2" onclick="tag_delete()" type="submit">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card-body">
+               <h5> Customer Name : <span> name</span></h5>
+               <h5> Customer Number : <span> 0321456987</span></h5>
+               <h5> Customer Address : <span> B-46, Flat-203, Pranav CHS Ltd. Sector -1, Shanti Nagar Mira Road Dist-Thane</span></h5>
+               <h5> Request Date : <span> 12/12/2020</span></h5>
             </div>
         </div>
     </div>
