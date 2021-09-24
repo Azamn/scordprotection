@@ -20,6 +20,11 @@ Route::get('/clients', function () {
     return view('main.clients');
 });
 
+Route::get('/services', function () {
+    return view('main.service');
+});
+
+
 
 Route::get('/admin/login', function () {
     return view('admin.Login.admin-login');
