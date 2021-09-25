@@ -23,8 +23,8 @@ class GetInTouchController extends Controller
 
         $rules = [
             'name' => 'required|string|regex:/^[a-zA-Z ]*$/|max:30',
-            'email' => 'required|email:rfc,dns',
-            'contact' => 'sometimes|required|numeric|digits_between:10,10',
+            'email' => 'sometimes|required|email:rfc,dns',
+            'contact' => 'required|numeric|digits_between:10,10',
             'subject' => 'sometimes|required|string',
             'message' => 'sometimes|required|string'
         ];

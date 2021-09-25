@@ -81,4 +81,6 @@ class HomePageController extends Controller
         return view("main.index",compact('aboutUsData','servicesData','featuresData','ourClientData'));
 
     }
+
+
 }

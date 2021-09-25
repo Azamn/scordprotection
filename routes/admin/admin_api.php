@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\OurClietsController;
 use App\Http\Controllers\Admin\GetInTouchController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +32,14 @@ Route::post('/create/get-in-touch',[GetInTouchController::class, 'create']);
 /** Route :: OurClients */
 Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll']);
 Route::post('/create/our-clients',[OurClietsController::class, 'create']);
+Route::get('/get-single/our-clients/{clientId}',[OurClietsController::class,'getSingle']);
+Route::post('/update/our-clients/{clientId}',[OurClietsController::class, 'update']);
 
 /** Route :: Services */
 Route::get('/get-all/service',[ServiceController::class, 'getAll']);
 Route::post('/create/services',[ServiceController::class, 'create']);
+Route::get('/get-single/service/{serviceId}',[ServiceController::class,'getSingle']);
+Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
 
 /** Route :: features */
 Route::get('/get-all/features', [FeatureController::class, 'getAll']);

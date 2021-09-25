@@ -2,20 +2,27 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\Admin\GetInTouchController;
 
 
-Route::get('/', function () {
-    return view('main.index');
-});
+// Route::get('/', function () {
+//     return view('main.index');
+// });
 
 
 Auth::routes();
 
-Route::get('/home', [HomePageController::class, 'index'])->name('home');
+Route::get('/', [HomePageController::class, 'index'])->name('home');
 
 Route::view('/contact-us/page', 'main.contactus')->name('contact-us');
-Route::view('/service-page', 'main.ourservice')->name('our-service');
+Route::view('/service-page', 'main.service')->name('our-service');
+
+Route::post('/create/get-in-touch',[GetInTouchController::class, 'create'])->name('store.get-in-touch');
+
+/** Route :: Feedback */
+Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');

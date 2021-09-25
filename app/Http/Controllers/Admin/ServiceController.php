@@ -48,4 +48,48 @@ class ServiceController extends Controller
             return response()->json(['status' => true, 'message' => 'Service Added Successfully.']);
         }
     }
+
+    public function getSingle(Request $request, $serviceId){
+
+        $service = MasterService::where('id',$serviceId)->first();
+        if($service){
+            return response()->json(['status' => true, 'data' => ServiceResource::make($service)]);
+        }
+    }
+
+    public function update(Request $request, $serviceId){
+
+        $rules = [
+            'name' => 'sometimes|required|string',
+            'description' => 'sometimes|required|string',
+            'image' => 'sometimes|required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return response()->json(['status' => false, 'errors' => $validator->errors()]);
+        } else {
+
+        $service = MasterService::where('id',$serviceId)->first();
+
+        if($request->has('name')){
+            $service->name = $request->name;
+        }
+
+        if($request->has('description')){
+            $service->description = $request->description;
+        }
+
+        if ($request->has('image')) {
+            $service->addMediaFromRequest('image')->toMediaCollection('service');
+        }
+
+        $service->update();
+
+        return response()->json(['status' => 'true', 'message' => 'Service Updated Successfully.']);
+
+        }
+
+    }
 }

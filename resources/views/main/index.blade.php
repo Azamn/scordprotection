@@ -36,36 +36,37 @@
                     @endforeach
                 </div>
 
+
                 <div class="col-lg-4">
                     <div class="call-to-action pt-2 call-to-action-dark">
                         <div class="m-t-30">
-                            <form class="widget-contact-form" data-success-message-delay="40000" novalidate
-                                action="include/contact-form.php" role="form" method="post">
+                            <form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
+                                @csrf
+
                                 <div class="row">
                                     <div class="m-0 text-center text-white heading-text heading-section">
                                         <h2 class="mb-5">Request a call back</h2>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="name" class="text-white">Name</label>
-                                        <input type="text" aria-required="true" name="widget-contact-form-name" required
+                                        <input type="text" aria-required="true" id="name" name="name" required
                                             class="form-control required name" placeholder="Enter your Name">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label for="subject" class="text-white">Phone Number</label>
-                                        <input type="text" name="widget-contact-form-subject" required
+                                        <input type="text" id="contact" name="contact" required
                                             class="form-control required" placeholder="Enter your Phone Number">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="message" class="text-white">Message</label>
-                                    <textarea type="text" name="widget-contact-form-message" required rows="5"
+                                    <textarea type="text" id="message" name="message" required rows="5"
                                         class="form-control required" placeholder="Enter your Message"></textarea>
                                 </div>
 
-                                <button class="btn btn-primary" type="submit" id="form-submit"><i
-                                        class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                                <button class="btn btn-primary" onclick="getInTouch()"  id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                             </form>
                         </div>
                     </div>
@@ -86,18 +87,20 @@
                 <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
+                @foreach (@$servicesData as $service)
                 <div class="offset-md-2 col-lg-2">
                     <div class="team-image">
-                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
+                        <img src="{{ $service['image_url'] }}" width="100%">
                     </div>
                     <div class="text-center">
-                        <h3>Door frame Detectors</h3>
-                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
+                        <h3>{{ $service['name'] }}</h3>
+                        <p>{{ $service['description'] }}
                         </p>
 
                     </div>
                 </div>
-                <div class="offset-md-1 col-lg-2">
+                @endforeach
+                {{-- <div class="offset-md-1 col-lg-2">
                     <div class="team-image">
                         <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
                     </div>
@@ -118,7 +121,7 @@
                         </p>
 
                     </div>
-                </div>
+                </div> --}}
 
             </div>
     </section>
@@ -130,15 +133,17 @@
                     <div class="text-left heading-text heading-section">
                         <h2> SCORD FACILITIES MANAGEMENT </h2>
                     </div>
+                    @foreach (@$featuresData as $feature)
                     <ul class="list-icon list-icon-arrow-circle list-icon-colored">
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Integer molestie lorem at massa</li>
+                        <li>{{ $feature['name'] }}</li>
+                        {{-- <li>Integer molestie lorem at massa</li>
                         <li>Facilisis in pretium nisl aliquet</li>
                         <li>Faucibus porta lacus fringilla vel</li>
                         <li>Aenean sit amet erat nunc</li>
                         <li>Eget porttitor lorem</li>
-                        <li>Beautiful nature, and rare feathers!</li>
+                        <li>Beautiful nature, and rare feathers!</li> --}}
                     </ul>
+                    @endforeach
                 </div>
                 <div class="col-lg-6">
                     <img alt="" src="{{asset('images/Facilities.png')}}" width="80%">
@@ -173,10 +178,14 @@
         <div class="container-fluid">
             <div class="carousel client-logos" data-items="6" data-items-sm="4" data-items-xs="3" data-items-xxs="2"
                 data-margin="30" data-arrows="false" data-autoplay="true" data-autoplay="1" data-loop="true">
+
+                @foreach ($ourClientData as $ourClient)
+
                 <div class="d-flex mt-5 align-items-center justify-content-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/1.jpeg')}}}"> </a>
+                    <a href="#"><img alt="" src="{{ $ourClient['image_url'] }}"> </a>
                 </div>
-                <div class="text-center">
+                @endforeach
+                {{--<div class="text-center">
                     <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
                 </div>
                 <div class="text-center">
@@ -229,7 +238,7 @@
                 </div>
                 <div class="text-center">
                     <a href="#"><img alt="" src="{{{asset('images/scordimg/19.jpeg')}}}"> </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -250,35 +259,35 @@
                         turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
                         fermentum bibendum.</p>
                     <div class="m-t-30">
-                        <form class="widget-contact-form" data-success-message-delay="40000" novalidate
-                            action="include/contact-form.php" role="form" method="post">
+                        <form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
+                                @csrf
+
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Name</label>
-                                    <input type="text" aria-required="true" name="widget-contact-form-name" required
+                                    <input type="text" aria-required="true" id="name"  name="name" required
                                         class="form-control required name" placeholder="Enter your Name">
                                 </div>
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     <label for="email">Email</label>
                                     <input type="email" aria-required="true" name="widget-contact-form-email" required
                                         class="form-control required email" placeholder="Enter your Email">
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label for="subject">Your Subject</label>
-                                    <input type="text" name="widget-contact-form-subject" required
-                                        class="form-control required" placeholder="Subject...">
+                                    <label for="contact">Phone Number</label>
+                                    <input type="text" id="contact" name="contact" required
+                                        class="form-control required" placeholder="Enteryour Phone Number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea type="text" name="widget-contact-form-message" required rows="5"
+                                <textarea type="text" id="message" name="message" required rows="5"
                                     class="form-control required" placeholder="Enter your Message"></textarea>
                             </div>
 
-                            <button class="btn btn-primary" type="submit" id="form-submit"><i
-                                    class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                            <button class="btn btn-primary" onclick="getInTouch()"  id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                         </form>
                     </div>
                 </div>
@@ -348,21 +357,26 @@
             <div class="row ">
                 <div class="col-lg-6">
                     <div class="m-t-30">
-                        <form class="widget-contact-form" id="feedback_form">
-                            <input type="hidden" name="_token" value="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX">
+
+                        <form class="widget-contact-form" id="feedback-form" novalidate role="form" method="POST">
+
+                        @csrf
+                        {{-- <input type="hidden" name="_token" value="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX"> --}}
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" aria-required="true" required="" class="form-control required name"
-                                    placeholder="Enter your Name" name="name">
+                                <input type="text" aria-required="true" id="name" name="name" required="" class="form-control required name"
+                                    placeholder="Enter your Name">
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea type="text" required="" rows="5" class="form-control required" name="body"
-                                    placeholder="Enter your Message"></textarea>
+                                <textarea type="text" id="message" name="message" required="" rows="5" class="form-control required"
+                                     placeholder="Enter your Message"></textarea>
                             </div>
 
-                            <button class="btn border-dark background-grey text-dark feedback_form_button" type="submit"
-                                id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Feedback</button>
+                            <button class="btn btn-primary" onclick="feedBack()"  id="feedback-form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+
+                            {{-- <button class="btn border-dark background-grey text-dark feedback_form_button" onclick="feedback()" type="submit"
+                                id="feedback-form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Feedback</button> --}}
                         </form>
                     </div>
                 </div>
@@ -381,3 +395,62 @@
 
 </div>
 @endsection
+
+<script src="{{asset('Asset/website/js/functions.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- Get In Touch and Request Call Back --}}
+
+   <script>
+        function getInTouch(){
+            const name = $("#name").val();
+            const contact = $("#contact").val();
+            const message = $("#message").val();
+
+            $.ajax({
+                type: "POST",
+                url: '{{ Route('store.get-in-touch') }}',
+                data: {
+                    "_token" : "{{ csrf_token() }}",
+                    "name" : name,
+                    "contact" : contact,
+                    "message" : message,
+                },
+                success: function (data) {
+                    $('#form-submit').html('<i class="fa fa-paper-plane"></i>&nbsp;Send message');
+                    if(data.status){
+                        $("#name").val('');
+                        $("#contact").val('');
+                        $("#message").val('');
+
+                        Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: data.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    }
+
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        })
+                    }
+                },
+                error: function (data) {
+                    $('#form-submit').html('<i class="fa fa-paper-plane"></i>&nbsp;Send message');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                    })
+                }
+            });
+        }
+
+    </script>
+
+
