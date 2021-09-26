@@ -21,8 +21,6 @@ Route::view('/service-page', 'main.service')->name('our-service');
 
 Route::post('/create/get-in-touch',[GetInTouchController::class, 'create'])->name('store.get-in-touch');
 
-/** Route :: Feedback */
-Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');

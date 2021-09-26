@@ -18,7 +18,7 @@ class FeedbackController extends Controller
     {
         $rules = [
             'name' => 'required|string|max:50',
-            'message' => 'sometimes|required|string'
+            'message' => 'required|string'
         ];
 
         $validator = Validator::make($request->all(), $rules);

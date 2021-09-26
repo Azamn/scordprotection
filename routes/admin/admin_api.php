@@ -45,5 +45,7 @@ Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
 Route::get('/get-all/features', [FeatureController::class, 'getAll']);
 Route::post('/create/feature',[FeatureController::class, 'create']);
 
+/** Route :: Feedback */
+Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
 
 Route::get('/home',[HomePageController::class, 'index']);
