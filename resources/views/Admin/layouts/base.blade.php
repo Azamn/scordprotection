@@ -82,7 +82,7 @@
     <script src="{{asset('Admin/js/animation/animate-custom.js')}}"></script>
     <script src="{{asset('Admin/js/tooltip-init.js')}}"></script>
     <script src="{{asset('Admin/js/todo/todo.js')}}"></script>
-    
+
     <script src="{{asset('Admin/js/chart/chartist/chartist.js')}}"></script>
     <script src="{{asset('Admin/js/chart/chartist/chartist-plugin-tooltip.js')}}"></script>
     <!-- Plugins JS Ends-->
@@ -121,9 +121,9 @@
 
         <script src="{{asset('Admin/js/animation/wow/wow.min.js')}}"> </script>
 
-    <script>
-      WOW.init();
-    </script>
+    {{-- <script>
+    WOW.init();
+    </script> --}}
      @yield('js')
 
 </body>

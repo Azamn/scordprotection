@@ -11,7 +11,7 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"><i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item"><a href="/admin/features"> Features</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('get.all-ourClients') }}"> Our Clients</a></li>
                         <li class="breadcrumb-item active">Create</li>
                     </ol>
                 </div>
@@ -38,7 +38,7 @@
                                             <input name="name" class="form-control" type="text" placeholder="Service Title" required="">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Image</label>
                                         <div class="col-sm-9">

@@ -19,18 +19,21 @@
         <div class="row team-members m-t-40">
             <div class="container mt-5 mb-5">
                 <div class="row">
+            @foreach (@$ourClientData as $client)
 
             <div class="col-lg-4">
                 <div class="team-member">
                     <div class="team-image card">
-                        <img src="{{asset('images/scordimg/2.jpeg')}}" height="500" style="object-fit: contain; object-position: center;">
+                        <img src="{{ $client['image_url']}}" height="500" style="object-fit: contain; object-position: center;">
                     </div>
                     <div class="team-desc">
-                        <h3>Dawood Mandviwalla</h3>
+                        <h3>{{ $client['name'] }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+
+            @endforeach
+            {{-- <div class="col-lg-4">
                 <div class="team-member">
                     <div class="team-image card">
                         <img src="{{asset('images/scordimg/3.jpeg')}}" height="500" style="object-fit: contain; object-position: center;">
@@ -149,7 +152,7 @@
                         <h3>Saifee Dalal</h3>
                     </div>
                 </div>
-            </div> --
+            </div> -- --}}
 
         </div>
     </div>

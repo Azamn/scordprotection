@@ -15,8 +15,24 @@ class OurClietsController extends Controller
     public function getAll(Request $request)
     {
 
-        $ourClients = OurClient::with('media')->get();
-        return response()->json(['status' => true, 'data' => OurClientResource::collection($ourClients)]);
+        $ourClientData = [];
+        $ourClients = OurClient::with('media')->where('status',1)->get();
+
+        foreach($ourClients as $ourClient){
+            $data = [
+            'id' => $ourClient->id,
+            'name' => $ourClient->name,
+            'description' => $ourClient->description,
+            'image_url' => $ourClient->media->isNotEmpty() ? $ourClient->media->last()->getFullUrl() : NULL,
+            'status' => $ourClient->status,
+            ];
+
+            array_push($ourClientData, $data);
+        }
+
+        return view('admin.Client.client-list', compact('ourClientData'));
+
+        // return response()->json(['status' => true, 'data' => OurClientResource::collection($ourClients)]);
     }
 
     public function create(Request $request)

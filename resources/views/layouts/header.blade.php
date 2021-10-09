@@ -45,7 +45,7 @@
                             <li class="mt-3"><a href={{ route('contact-us') }}>Contact Us</a>
 
                             </li>
-                            <li class="mt-3"><a href="/clients">Our Clients</a>
+                            <li class="mt-3"><a href={{ route('get.our-clients') }}>Our Clients</a>
 
                             </li>
                         </ul>

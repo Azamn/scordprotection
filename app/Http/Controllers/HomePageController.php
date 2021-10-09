@@ -78,9 +78,25 @@ class HomePageController extends Controller
 
         //return $ourClientData;
 
-        return view("main.index",compact('aboutUsData','servicesData','featuresData','ourClientData'));
-
+        return view("main.index", compact('aboutUsData', 'servicesData', 'featuresData', 'ourClientData'));
     }
 
+    public function ourClientsView(Request $request)
+    {
 
+        $ourClientData = [];
+        $ourClients = OurClient::with('media')->where('status', 1)->get();
+        foreach ($ourClients as $client) {
+            $data = [
+                'id' => $client->id,
+                'name' => $client->name,
+                'image_url' => $client->media->isNotEmpty() ? $client->media->last()->getFullUrl() : NULL,
+
+            ];
+
+            array_push($ourClientData, $data);
+        }
+
+        return view("main.clients", compact('ourClientData'));
+    }
 }

@@ -10,7 +10,7 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"> <i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item active">Features</li>
+                        <li class="breadcrumb-item active">Our Clients</li>
                         {{--              <li class="breadcrumb-item active">Product list</li>--}}
                     </ol>
                 </div>
@@ -23,7 +23,7 @@
             <div class="card-header">
                 <h3>Clients List</h3>
                 <div class="mt-4">
-                    <a class="btn btn-primary" href="/admin/client-create">Add Client + </a>
+                    <a class="btn btn-primary" href="{{ route('create-clients') }}">Add Client</a>
                 </div>
             </div>
             <div class="table-responsive">
@@ -38,10 +38,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($ourClientData as $client )
                         <tr>
-                            <th scope="row">1</th>
-                            <td>A R Kalsekar</td>
-                            <td><img src="{{asset('images/scordimg/1.jpeg')}}" width="150" alt=""></td>
+                            <th scope="row">{{ $client['id'] }}</th>
+                            <td>{{ $client['name'] }}</td>
+                            <td><img src="{{ $client['image_url'] }}" width="150" alt=""></td>
                             <td> <div class="media mb-2">
                                 <div class="media-body text-end">
                                   <label class="switch">
@@ -53,7 +54,8 @@
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>
-                        <tr>
+                        @endforeach
+                        {{-- <tr>
                             <th scope="row">1</th>
                             <td>Alexander</td>
                             <td><img src="{{asset('images/scordimg/2.jpeg')}}" width="150" alt=""></td>
@@ -67,7 +69,7 @@
                             <td>
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                 </table>
             </div>

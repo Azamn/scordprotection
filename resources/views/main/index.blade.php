@@ -258,9 +258,9 @@
                     <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
                         turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
                         fermentum bibendum.</p>
-                    <div class="m-t-30"><form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
+                    <div class="m-t-30">
+                        <form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
                         @csrf
-
                         <div class="row">
                             <div class="m-0 text-center text-white heading-text heading-section">
                                 {{-- <h2 class="mb-5">Request a call back</h2> --}}
@@ -286,7 +286,6 @@
 
                         <button class="btn btn-primary" onclick="getInTouch()"  id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                     </form>
-
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -451,7 +450,6 @@
         // GetIn Touch Ajax
 
         function getInTouch(){
-
             const gName = $("#gName").val();
             const gContact = $("#gContact").val();
             const gMessage = $("#gMessage").val();

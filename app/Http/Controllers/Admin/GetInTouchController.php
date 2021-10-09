@@ -11,11 +11,30 @@ use App\Http\Resources\GetInTouchResource;
 class GetInTouchController extends Controller
 {
 
-    public function getAll(Request $request){
+    public function getAll(Request $request)
+    {
 
         $getInTouch = GetInTouch::get();
-        return response()->json(['status' => true, 'data' => GetInTouchResource::collection($getInTouch)]);
 
+        $customerRequest = [];
+
+        foreach ($getInTouch as $getTouh) {
+            $data = [
+                'id' => $getTouh->id,
+                'name' => $getTouh->name,
+                'email' => $getTouh->email,
+                'contact' => $getTouh->contact,
+                'subject' => $getTouh->subject,
+                'message' => $getTouh->message,
+                'status' => $getTouh->status,
+            ];
+
+            array_push($customerRequest, $data);
+        }
+        //return $customerRequest;
+        //return response()->json(['status' => true, 'data' => GetInTouchResource::collection($getInTouch)]);
+
+        return view("admin.Request.request-list", compact('customerRequest'));
     }
 
     public function create(Request $request)
@@ -41,10 +60,21 @@ class GetInTouchController extends Controller
             $getInTouch->contact = $request->contact;
             $getInTouch->subject = $request->subject;
             $getInTouch->message = $request->message;
+            $getInTouch->status = 0;
 
             $getInTouch->save();
 
             return response()->json(['status' => true, 'message' => 'Your Request Send Successfully.']);
         }
+    }
+
+    public function delete(Request $request, $requestId){
+
+        $getInTouch = GetInTouch::where('id',$requestId)->first();
+        if($getInTouch){
+            $getInTouch->delete();
+            return response()->json(['status' => true, 'message' => 'Request Deleted Successfully.']);
+        }
+
     }
 }

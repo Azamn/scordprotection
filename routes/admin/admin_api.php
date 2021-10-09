@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\OurClietsController;
 use App\Http\Controllers\Admin\GetInTouchController;
 use App\Http\Controllers\FeedbackController;
+use App\Models\GetInTouch;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,18 +27,19 @@ Route::get('/get-all/about-us',[AboutUsController::class,'getAll'])->name('about
 Route::post('/create/about-us',[AboutUsController::class,'create'])->name('about-us.create');
 
 /** Route:: GetInTouch */
-Route::get('/get-all/get-in-touch',[GetInTouchController::class, 'getAll']);
+Route::get('/customer/request',[GetInTouchController::class, 'getAll'])->name('customer-request-all');
 Route::post('/create/get-in-touch',[GetInTouchController::class, 'create']);
+Route::delete('/delete/request',[GetInTouchController::class,'delete'])->name('delete.request');
 
 /** Route :: OurClients */
-Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll']);
+Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll'])->name('all-ourClients');
 Route::post('/create/our-clients',[OurClietsController::class, 'create']);
 Route::get('/get-single/our-clients/{clientId}',[OurClietsController::class,'getSingle']);
 Route::post('/update/our-clients/{clientId}',[OurClietsController::class, 'update']);
 
 /** Route :: Services */
 Route::get('/get-all/service',[ServiceController::class, 'getAll']);
-Route::post('/create/services',[ServiceController::class, 'create']);
+Route::post('/create/services',[ServiceController::class, 'create'])->name('store.services');
 Route::get('/get-single/service/{serviceId}',[ServiceController::class,'getSingle']);
 Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
 

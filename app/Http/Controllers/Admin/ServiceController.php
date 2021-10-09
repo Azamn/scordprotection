@@ -13,9 +13,22 @@ class ServiceController extends Controller
 
     public function getAll(Request $request)
     {
+        $serviceData = [];
+        $services = MasterService::with('media')->where('status',1)->get();
 
-        $services = MasterService::with('media')->get();
-        return response()->json(['status' => true, 'data' => ServiceResource::collection($services)]);
+        foreach($services as $service){
+            $data = [
+                'id' => $service->id,
+                'name' => $service->name,
+                'description' => $service->description,
+                'image_url' => $service->media->isNotEmpty() ? $service->media->last()->getFullUrl() : NULL,
+            ];
+            array_push($serviceData, $data);
+        }
+
+        return view("admin.Service.service-list", compact('serviceData'));
+
+        // return response()->json(['status' => true, 'data' => ServiceResource::collection($services)]);
     }
 
 
@@ -87,7 +100,7 @@ class ServiceController extends Controller
 
         $service->update();
 
-        return response()->json(['status' => 'true', 'message' => 'Service Updated Successfully.']);
+        return response()->json(['status' => true, 'message' => 'Service Updated Successfully.']);
 
         }
 
