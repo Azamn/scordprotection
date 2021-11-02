@@ -10,7 +10,7 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"> <i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item active">Features</li>
+                        <li class="breadcrumb-item active">Completed Requests</li>
                         {{--              <li class="breadcrumb-item active">Product list</li>--}}
                     </ol>
                 </div>
@@ -37,11 +37,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (@$customerCompletedRequest as $request)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Alexander</td>
-                            <td>Orton</td>
-                            <td>Message</td>
+                            <th scope="row">{{ $request['id'] }}</th>
+                            <td>{{ $request['name'] }}</td>
+                            <td>{{ $request['contact'] }}</td>
+                            <td>{{ $request['message'] }}</td>
                             <td> <div class="media mb-2">
                                 <div class="media-body text-end">
                                   <label class="switch">
@@ -53,6 +54,7 @@
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

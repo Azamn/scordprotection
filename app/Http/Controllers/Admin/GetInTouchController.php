@@ -14,7 +14,7 @@ class GetInTouchController extends Controller
     public function getAll(Request $request)
     {
 
-        $getInTouch = GetInTouch::get();
+        $getInTouch = GetInTouch::where('status',0)->get();
 
         $customerRequest = [];
 
@@ -35,6 +35,30 @@ class GetInTouchController extends Controller
         //return response()->json(['status' => true, 'data' => GetInTouchResource::collection($getInTouch)]);
 
         return view("admin.Request.request-list", compact('customerRequest'));
+    }
+
+    public function getCompletedRequest(Request $request){
+
+        $getInTouch = GetInTouch::where('status',1)->get();
+
+        $customerCompletedRequest = [];
+
+        foreach ($getInTouch as $getTouh) {
+            $data = [
+                'id' => $getTouh->id,
+                'name' => $getTouh->name,
+                'email' => $getTouh->email,
+                'contact' => $getTouh->contact,
+                'subject' => $getTouh->subject,
+                'message' => $getTouh->message,
+                'status' => $getTouh->status,
+            ];
+
+            array_push($customerCompletedRequest, $data);
+        }
+
+        return view("admin.Request.request-list-completed",compact('customerCompletedRequest'));
+
     }
 
     public function create(Request $request)

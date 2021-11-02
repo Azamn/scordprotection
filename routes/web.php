@@ -7,6 +7,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\OurClietsController;
 use App\Http\Controllers\Admin\GetInTouchController;
+use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('main.index');
@@ -23,6 +24,7 @@ Route::view('/service-page', 'main.service')->name('our-service');
 /** Admin Side */
 /** Service Route */
 Route::get('/service/list',[ServiceController::class,'getAll'])->name('list-service');
+Route::post('/create/services',[ServiceController::class, 'create'])->name('store.services');
 Route::view('/create/service','admin.Service.service-create')->name('create-service');
 
 
@@ -34,9 +36,12 @@ Route::post('/create/get-in-touch',[GetInTouchController::class, 'create'])->nam
 
 Route::get('/our-clients/page',[HomePageController::class,'ourClientsView'])->name('get.our-clients');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
+/** Dashboard Route */
+Route::get('/admin/dashboard',[DashboardController::class, 'dashboardPage']);
+
+// Route::get('/admin/dashboard', function () {
+//     return view('admin.dashboard');
+// });
 
 Route::get('/clients', function () {
     return view('main.clients');

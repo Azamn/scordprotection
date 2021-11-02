@@ -14,9 +14,9 @@ class ServiceController extends Controller
     public function getAll(Request $request)
     {
         $serviceData = [];
-        $services = MasterService::with('media')->where('status',1)->get();
+        $services = MasterService::with('media')->where('status', 1)->get();
 
-        foreach($services as $service){
+        foreach ($services as $service) {
             $data = [
                 'id' => $service->id,
                 'name' => $service->name,
@@ -38,7 +38,7 @@ class ServiceController extends Controller
         $rules = [
             'name' => 'required|string|regex:/^[a-zA-Z ]*$/|max:30',
             'description' => 'required|string',
-            'image' => 'sometimes|required'
+            'image' => 'required|file'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -62,15 +62,17 @@ class ServiceController extends Controller
         }
     }
 
-    public function getSingle(Request $request, $serviceId){
+    public function getSingle(Request $request)
+    {
 
-        $service = MasterService::where('id',$serviceId)->first();
-        if($service){
+        $service = MasterService::where('id', $request->service_id)->first();
+        if ($service) {
             return response()->json(['status' => true, 'data' => ServiceResource::make($service)]);
         }
     }
 
-    public function update(Request $request, $serviceId){
+    public function update(Request $request, $serviceId)
+    {
 
         $rules = [
             'name' => 'sometimes|required|string',
@@ -84,25 +86,32 @@ class ServiceController extends Controller
             return response()->json(['status' => false, 'errors' => $validator->errors()]);
         } else {
 
-        $service = MasterService::where('id',$serviceId)->first();
+            $service = MasterService::where('id', $serviceId)->first();
 
-        if($request->has('name')){
-            $service->name = $request->name;
+            if ($request->has('name')) {
+                $service->name = $request->name;
+            }
+
+            if ($request->has('description')) {
+                $service->description = $request->description;
+            }
+
+            if ($request->has('image')) {
+                $service->addMediaFromRequest('image')->toMediaCollection('service');
+            }
+
+            $service->update();
+
+            return response()->json(['status' => true, 'message' => 'Service Updated Successfully.']);
         }
+    }
 
-        if($request->has('description')){
-            $service->description = $request->description;
+    public function delete(Request $request)
+    {
+        $service = MasterService::where('id', $request->service_id)->first();
+        if ($service) {
+           $service->delete();
+           return response()->json(['status' => true, 'message' => 'Service Deleted Successfully.']);
         }
-
-        if ($request->has('image')) {
-            $service->addMediaFromRequest('image')->toMediaCollection('service');
-        }
-
-        $service->update();
-
-        return response()->json(['status' => true, 'message' => 'Service Updated Successfully.']);
-
-        }
-
     }
 }

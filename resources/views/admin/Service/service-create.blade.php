@@ -27,10 +27,9 @@
                     <div class="card-header">
                         <h5>Add Service</h5>
                     </div>
-                    <form class="widget-contact-form" id="serviceAdd" method="POST">
-                    {{-- <form class="form theme-form needs-validation" id="serviceAdd" method="" > --}}
+                    <form class="widget-contact-form" id="serviceAdd" action="{{ route('store.services') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="_token" value="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX">
+                        <meta name="csrf-token" content="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
@@ -38,31 +37,37 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Name</label>
                                         <div class="col-sm-9">
-                                            <input name="name" id="name" class="form-control" type="text" placeholder="Service Name" required="">
-                                            <span id="nameError" class="alert-message" style="color:red"></span>
+                                            <input type="text" name="name" id="name" class="form-control"  placeholder="Service Name">
+                                            <span class="text-danger error-text name_error"></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Description</label>
                                         <div class="col-sm-9">
-                                            <textarea name="description" id="description" class="form-control" type="text" placeholder="Service Descrition" required=""></textarea>
-                                            <span id="descriptionError" class="alert-message" style="color:red"></span>
+                                            <textarea type="text" name="description" id="description" class="form-control"  placeholder="Service Descrition" ></textarea>
+                                            <span class="text-danger error-text description_error"></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Image</label>
                                         <div class="col-sm-9">
-                                            <input name="image" id="image" class="form-control" type="file"
+                                            <input type="file" name="image" id="image" class="form-control"
                                                    placeholder="Product Thumbnail" >
-                                            <span id="imageError" class="alert-message" style="color:red"></span>
+                                                   <span class="text-danger error-text image_error"></span>
                                         </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9">
+                                        <div class="img-holder"></div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="col-sm-9 offset-sm-3">
-                                <button class="btn btn-primary" onclick="serviceAdd()"  id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Save</button>
+                                <button type="submit" class="btn btn-primary" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Save</button>
                                 {{-- <button class="btn btn-primary " onclick="serviceAdd()" type="submit">Save</button> --}}
                                 <button class="btn btn-light" type="submit">Cancel</button>
                             </div>
@@ -86,61 +91,74 @@
 
 <script>
 
-        function serviceAdd(){
+    $(function(){
 
-            const name = $('#name').val();
-            const description =  $('#description').val();
-            const image = $('#image').val();
-
-
+        $('#serviceAdd').on('submit', function(e){
+            e.preventDefault();
+            var form = this;
+            var token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
-                type: "POST",
-                // contentType: "application/json; charset=utf-8",
-                url: '{{ Route('store.services') }}',
-                // dataType: "json",
-                data: {
-                    "_token" : "{{ csrf_token() }}",
-                    "name" : name,
-                    "description" : description,
-                    "image" : image,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function (data) {
-                    console.log('data');
-                    $('#form-submit').html('<i class="fa fa-paper-plane"></i>&nbsp;Add Service');
-                    if(data.status){
-                        $("#name").val('');
-                        $("#description").val('');
-                        $("#image").val('');
-
-                        Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: data.message,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    }
-
-                    else{
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
-                    }
+                url:$(form).attr('action'),
+                method:$(form).attr('method'),
+                data:new FormData(form),
+                processData:false,
+                dataType:'json',
+                contentType:false,
+                beforeSend:function(response){
+                    $(form).find('span.error-text').text('');
                 },
-                error: function (data) {
-                    $('#form-submit').html('<i class="fa fa-paper-plane"></i>&nbsp;Send message');
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
-                    })
+
+
+                success:function(data){
+                    if(data.status == false){
+                        $.each(data.errors, function(prefix,val){
+                            $(form).find('span.'+prefix+'_error').text(val[0]);
+                        });
+                    }else{
+                        $(form)[0].reset();
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                    }
                 }
-
             });
 
-        }
+        });
+
+        //Reset input file
+        $('input[type="file"][name="image"]').val('');
+        // Image preview
+        $('input[type="file"][name="image"]').on('change', function(){
+            var img_path = $(this)[0].value;
+            var img_holder = $('.img-holder');
+            var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
+
+            if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
+                if(typeof(FileReader) != 'undefined'){
+                    img_holder.empty();
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:100px;margin-bottom:10px'}).
+                        appendTo(img_holder);
+                    }
+                    img_holder.show();
+                    reader.readAsDataURL($(this)[0].files[0]);
+                }else{
+                    $(img_holder).html('This browser does not support FileReader.');
+                }
+            }
+        })
+
+    })
+
 </script>
 
 @endsection

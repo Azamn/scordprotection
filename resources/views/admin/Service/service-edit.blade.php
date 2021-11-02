@@ -7,12 +7,12 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-6">
-                        <h3>Feature Edit</h3>
+                        <h3></h3>
                     </div>
                     <div class="col-6">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin/dashboard"><i data-feather="home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="/admin/feature"> Features</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('list-service') }}"> Service</a></li>
                             <li class="breadcrumb-item active">Edit</li>
                         </ol>
                     </div>
@@ -25,7 +25,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>name</h5>
+                            <h5>Service Edit</h5>
                         </div>
                         <form class="form theme-form needs-validation"  action="" novalidate="" method="POST">
                             @csrf
@@ -53,7 +53,7 @@
                                                 <input class="form-control" type="file" data-bs-original-title="" title="">
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -76,4 +76,14 @@
 
 @section('js')
     <script src="{{asset('Assets/Admin/js/form-validation-custom.js')}}"></script>
+    <script src="{{asset('Asset/website/js/functions.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        
+
+    </script>
+
+
 @endsection

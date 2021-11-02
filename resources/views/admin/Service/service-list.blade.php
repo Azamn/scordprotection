@@ -48,8 +48,8 @@
                                {{$service['description']}}
                             </td>
                             <td><img src="{{ $service['image_url'] }}" alt="" width = "100"></td>
-                            <td> <a class="btn btn-primary m-2" href="/admin/service-edit">Edit</a>
-                                <button class="btn btn-danger m-2" onclick="tag_delete()" type="submit">Delete</button>
+                            <td> <a class="btn btn-primary m-2" data-id="{{ $service['id'] }}" id="editBtn">Edit</a>
+                                <button class="btn btn-danger m-2" data-id="{{ $service['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>
                         @endforeach
@@ -79,60 +79,72 @@
 @endsection
 @section('js')
 <script>
-    function tag_delete(request_id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            // icon: 'warning',
-            showCancelButton: true,
-            allowOutsideClick: false,
-            cancelButtonColor: '#7366ff',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Delete'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'DELETE',
-                    url: "/admin/request/" + request_id,
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    success: function (data) {
-                        $('#' + request_id).fadeOut('fast', function () {
-                            $('#' + request_id).remove();
-                        });
-                        $.notify({
-                            // title:'Title',
-                            message: 'Feature Successfully Deleted!'
-                        }, {
-                            type: 'success',
-                            allow_dismiss: false,
-                            newest_on_top: false,
-                            mouse_over: false,
-                            showProgressbar: false,
-                            spacing: 10,
-                            timer: 500,
-                            placement: {
-                                from: 'top',
-                                align: 'right'
-                            },
-                            offset: {
-                                x: 30,
-                                y: 60
-                            },
-                            delay: 500,
-                            z_index: 10000,
-                            animate: {
-                                enter: 'animated fadeIn',
-                                exit: 'animated fadeOut'
-                            }
-                        });
-                        // location.reload();
-                    }
-                });
-            }
-        });
-    }
+    $(function(){
+        // Edit
+        $(document).on('click','#editBtn', function(){
+            var form = this;
+            var service_id = $(form).attr('data-id');
+            var url = '{{ route("get-single.service") }}';
 
+            // $.get(url,{service_id:service_id},function(data){
+
+            //     window.location.href = '/admin/service-edit';
+
+
+
+            // },'json');
+
+
+            // "/admin/service-edit"
+
+        });
+
+        // Delete
+        $(document).on('click','#deleteBtn', function(){
+
+            var form = this;
+            var service_id = $(form).attr('data-id');
+            var url = '{{ route("delete.service") }}';
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                // icon: 'warning',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                cancelButtonColor: '#7366ff',
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'Delete'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        headers: {
+                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        url:url,
+                        method:'DELETE',
+                        data:{service_id:service_id},
+                        dataType:'json',
+
+                       success:function(data){
+                           if(data.status == true){
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                location.reload(true);
+                           }
+                       }
+
+                    });
+                }
+            });
+        });
+
+
+    })
 </script>
 @endsection

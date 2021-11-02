@@ -11,6 +11,25 @@ class FeedbackController extends Controller
 
     public function getAll(Request $request){
 
+        $feedbacks = MasterFeedback::get();
+
+        $allFeedback = [];
+
+        foreach($feedbacks as $feedback){
+
+            $data = [
+                'id' => $feedback->id,
+                'name' => $feedback->name,
+                'message' => $feedback->message,
+                'status' => $feedback->status,
+            ];
+
+            array_push($allFeedback, $data);
+        }
+
+        //return $allFeedback;
+
+        return view("admin.User.feedback",compact('allFeedback'));
 
     }
 

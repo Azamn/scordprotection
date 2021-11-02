@@ -15,10 +15,10 @@
                     <li class="sidebar-list"><a class="nav-link " href="/admin/dashboard">
                             <i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li class="sidebar-list">
-                        <a class="nav-link  " href="{{ route('customer-request-all') }}"><i data-feather="truck"></i><span>Requests</span></a>
+                        <a class="nav-link  " href="{{ route('customer-request-all') }}"><i data-feather="truck"></i><span>Pending Requests</span></a>
                     </li>
                     <li class="sidebar-list">
-                        <a class="nav-link  " href="/admin/request-completed"><i data-feather="box"></i><span>Completed Request</span></a>
+                        <a class="nav-link  " href="{{ route('get.customer-completed-request') }}"><i data-feather="box"></i><span>Completed Request</span></a>
                     </li>
                     <li class="sidebar-list">
                         <a class="nav-link" href="{{ route('list-service') }}"><i
@@ -33,7 +33,7 @@
                                 data-feather="git-merge"></i><span>Contact</span></a>
                     </li>
                     <li class="sidebar-list">
-                        <a class="nav-link " href="/admin/feedback"><i data-feather="users"></i><span>Feedback</span></a>
+                        <a class="nav-link " href="{{ route('get.feedback') }}"><i data-feather="users"></i><span>Feedback</span></a>
                     </li>
 
                     <li class="sidebar-list">

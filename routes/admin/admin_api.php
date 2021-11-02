@@ -30,6 +30,7 @@ Route::post('/create/about-us',[AboutUsController::class,'create'])->name('about
 Route::get('/customer/request',[GetInTouchController::class, 'getAll'])->name('customer-request-all');
 Route::post('/create/get-in-touch',[GetInTouchController::class, 'create']);
 Route::delete('/delete/request',[GetInTouchController::class,'delete'])->name('delete.request');
+Route::get('/customer/completed/request',[GetInTouchController::class,'getCompletedRequest'])->name('get.customer-completed-request');
 
 /** Route :: OurClients */
 Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll'])->name('all-ourClients');
@@ -39,15 +40,17 @@ Route::post('/update/our-clients/{clientId}',[OurClietsController::class, 'updat
 
 /** Route :: Services */
 Route::get('/get-all/service',[ServiceController::class, 'getAll']);
-Route::post('/create/services',[ServiceController::class, 'create'])->name('store.services');
-Route::get('/get-single/service/{serviceId}',[ServiceController::class,'getSingle']);
+
+Route::get('/get-single/service',[ServiceController::class,'getSingle'])->name('get-single.service');
 Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
+Route::delete('/delete/service',[ServiceController::class,'delete'])->name('delete.service');
 
 /** Route :: features */
 Route::get('/get-all/features', [FeatureController::class, 'getAll']);
 Route::post('/create/feature',[FeatureController::class, 'create']);
 
 /** Route :: Feedback */
+Route::get('customer/feedback',[FeedbackController::class,'getAll'])->name('get.feedback');
 Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
 
 Route::get('/home',[HomePageController::class, 'index']);

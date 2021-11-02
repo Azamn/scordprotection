@@ -37,10 +37,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (@$allFeedback as $feedback)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Alexander</td>
-                            <td> 	Happy with the work done,quick service,professional staff</td>
+                            <th scope="row">{{ $feedback['id'] }}</th>
+                            <td>{{ $feedback['name'] }}</td>
+                            <td>{{ $feedback['message'] }}</td>
                             <td> <div class="media mb-2">
                                 <div class="media-body text-end">
                                   <label class="switch">
@@ -48,10 +49,11 @@
                                   </label>
                                 </div>
                               </div></td>
-                            <td> 
+                            <td>
                                 <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
