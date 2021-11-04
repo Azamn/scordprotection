@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id='client_table'>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -38,20 +38,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ourClientData as $client )
+                        @foreach ($ourClientData as $key => $client )
                         <tr>
-                            <th scope="row">{{ $client['id'] }}</th>
+                            <th scope="row">{{ $key + 1  }}</th>
                             <td>{{ $client['name'] }}</td>
                             <td><img src="{{ $client['image_url'] }}" width="150" alt=""></td>
-                            <td> <div class="media mb-2">
-                                <div class="media-body text-end">
-                                  <label class="switch">
-                                    <input type="checkbox" data-bs-original-title="" title=""><span class="switch-state"></span>
-                                  </label>
-                                </div>
-                              </div></td>
                             <td>
-                                <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
+                                {{-- <div class="media mb-2">
+                                <div class="media-body text-end"> --}}
+
+                                    <label class="switch">
+                                        {{-- <input data-id="{{ $client['id'] }}" id="toggleStatus" class="toggle-class" type="checkbox"
+                                            data-onstyle="success"
+                                                data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="Inactive"
+                                                 {{ $client['status'] ? 'checked' : '' }}> --}}
+
+                                        <input type="checkbox" id="togBtn" value="true" data-bs-original-title="" title=""><span class="switch-state"></span> --}}
+                                    </label>
+
+
+                                {{-- </div>
+                              </div> --}}
+                            </td>
+                            <td>
+                                <button class="btn btn-danger m-2" data-id="{{ $client['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>
                         @endforeach
@@ -79,8 +89,17 @@
 </div>
 @endsection
 @section('js')
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 <script>
-    function tag_delete(request_id) {
+
+    // delete
+     $(document).on('click','#deleteBtn', function(){
+
+        var form = this;
+        var client_id = $(form).attr('data-id');
+        var url = '{{ route("client.delete") }}';
+
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -93,47 +112,72 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    type: 'DELETE',
-                    url: "/admin/request/" + request_id,
-                    data: {
-                        "_token": "{{ csrf_token() }}",
+                    headers: {
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    success: function (data) {
-                        $('#' + request_id).fadeOut('fast', function () {
-                            $('#' + request_id).remove();
-                        });
-                        $.notify({
-                            // title:'Title',
-                            message: 'Feature Successfully Deleted!'
-                        }, {
-                            type: 'success',
-                            allow_dismiss: false,
-                            newest_on_top: false,
-                            mouse_over: false,
-                            showProgressbar: false,
-                            spacing: 10,
-                            timer: 500,
-                            placement: {
-                                from: 'top',
-                                align: 'right'
-                            },
-                            offset: {
-                                x: 30,
-                                y: 60
-                            },
-                            delay: 500,
-                            z_index: 10000,
-                            animate: {
-                                enter: 'animated fadeIn',
-                                exit: 'animated fadeOut'
-                            }
-                        });
-                        // location.reload();
+                    url:url,
+                    method:'DELETE',
+                    data:{client_id:client_id},
+                    dataType:'json',
+
+                success:function(data){
+                    if(data.status == true){
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            location.reload(true);
                     }
+                }
+
                 });
             }
         });
-    }
+    });
 
 </script>
+
+{{-- <script>
+
+
+    $(function(){
+        $('#toggleStatus').click(function(){
+
+            var = status = $(this).prop('checked') == true ? 1 : 0;
+            var client_id = $(this).data('id');
+
+            console.log(status);
+            $.ajax({
+                headers: {
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                type:"GET",
+                dataType:"Json",
+                url:'{{ route("client.change.status") }}',
+                data:{
+                    'status':status,
+                    'client_id':client_id
+                },
+                success: function(data){
+                    if(data.status == true){
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            location.reload(true);
+                    }
+
+                }
+            });
+
+        });
+    })
+
+</script> --}}
 @endsection

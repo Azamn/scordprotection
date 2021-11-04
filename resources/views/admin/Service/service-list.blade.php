@@ -39,9 +39,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (@$serviceData as $service)
+                        @foreach (@$serviceData as $key => $service)
                         <tr>
-                            <th scope="row">{{ $service['id'] }}</th>
+                            <th scope="row">{{ $key + 1 }}</th>
 
                             <td>{{ $service['name'] }}</td>
                             <td>

@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="scord protection"
+        content="Scord protection provide awesome security, powerful, with high professionalism security guard">
     <meta name="keywords"
-        content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
+        content="scord protection, scordprotection,Scord Protection, Security, security, Navi mumbai security, panvel security, office-security, government security">
     <meta name="author" content="pixelstrap">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="shortcut icon" href="{{asset('Admin/images/favicon.png')}}" type="image/x-icon">
@@ -33,7 +33,7 @@
     <!-- Plugins css Ends-->
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/css/vendors/todo.css')}}">
     <!-- Bootstrap css-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/css/vendors/select2.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/css/vendors/datatables.css')}}">
@@ -51,6 +51,8 @@
     <link id="color" rel="stylesheet" href="{{asset('Admin/css/color-1.css')}}" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/css/responsive.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css" integrity="sha512-9tISBnhZjiw7MV4a1gbemtB9tmPcoJ7ahj8QWIc0daBCdvlKjEA48oLlo6zALYm3037tPYYulT0YQyJIJJoyMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -119,7 +121,7 @@
 {{--        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.minjs')}}"></script>--}}
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" integrity="sha512-F636MAkMAhtTplahL9F6KmTfxTmYcAcjcCkyu0f0voT3N/6vzAuJ4Num55a0gEJ+hRLHhdz3vDvZpf6kqgEa5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="{{asset('Admin/js/animation/wow/wow.min.js')}}"> </script>
 
     {{-- <script>

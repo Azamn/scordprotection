@@ -16,15 +16,15 @@ class OurClietsController extends Controller
     {
 
         $ourClientData = [];
-        $ourClients = OurClient::with('media')->where('status',1)->get();
+        $ourClients = OurClient::with('media')->get();
 
-        foreach($ourClients as $ourClient){
+        foreach ($ourClients as $ourClient) {
             $data = [
-            'id' => $ourClient->id,
-            'name' => $ourClient->name,
-            'description' => $ourClient->description,
-            'image_url' => $ourClient->media->isNotEmpty() ? $ourClient->media->last()->getFullUrl() : NULL,
-            'status' => $ourClient->status,
+                'id' => $ourClient->id,
+                'name' => $ourClient->name,
+                'description' => $ourClient->description,
+                'image_url' => $ourClient->media->isNotEmpty() ? $ourClient->media->last()->getFullUrl() : NULL,
+                'status' => $ourClient->status,
             ];
 
             array_push($ourClientData, $data);
@@ -61,7 +61,7 @@ class OurClietsController extends Controller
 
             $ourClient->save();
 
-            return response()->json(['status' => true, 'message' => 'Client Details Added Successfully.!']);
+            return response()->json(['status' => true, 'message' => 'Client Details Added Successfully.']);
         }
     }
 
@@ -107,5 +107,29 @@ class OurClietsController extends Controller
 
             return response()->json(['status' => 'true', 'message' => 'Client Updated Successfully.']);
         }
+    }
+
+    public function delete(Request $request)
+    {
+
+        $ourClient = OurClient::where('id', $request->client_id)->first();
+
+        if ($ourClient) {
+            $ourClient->delete();
+            return response()->json(['status' => true, 'message' => 'Client Data Deleted Successfully.']);
+        }
+    }
+
+    public function changeClientStatus(Request $request){
+
+        $ourClient = OurClient::where('id', $request->client_id)->first();
+
+        if($ourClient){
+            $ourClient->status = $request->status;
+            $ourClient->save();
+            return response()->json(['status' => true, 'message' => 'Status Updated Successfully.']);
+        }
+
+
     }
 }
