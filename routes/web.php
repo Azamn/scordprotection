@@ -83,6 +83,15 @@ Route::get('/admin/facilities-create', function () {
     return view('admin.Facilities.facilities-create');
 });
 
+Route::get('/admin/aboutus-create', function () {
+    return view('admin.AboutUs.aboutus-create');
+});
+
+
+Route::get('/admin/about-us', function () {
+    return view('admin.AboutUs.aboutus');
+});
+
 
 Route::get('/admin/feedback', function () {
     return view('admin.User.feedback');

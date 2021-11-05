@@ -6,7 +6,7 @@
     <!-- Inspiro Slider -->
     <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
         <!-- Slide 1 -->
-        <div class="slide" style="background-image:url('images/scordimg/bg.jpg');">
+        <div class="slide" style="background-image:url('images/background.png');">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="slide-captions text-center text-light">
@@ -176,6 +176,9 @@
     <!-- Client logo -->
     <section class="background-grey text-center">
         <div class="container-fluid">
+            <div class="text-center heading-text heading-section">
+                <h2>OUR CLIENTS</h2>
+            </div>
             <div class="carousel client-logos" data-items="6" data-items-sm="4" data-items-xs="3" data-items-xxs="2"
                 data-margin="30" data-arrows="false" data-autoplay="true" data-autoplay="1" data-loop="true">
 
@@ -185,60 +188,7 @@
                     <a href="#"><img alt="" src="{{ $ourClient['image_url'] }}"> </a>
                 </div>
                 @endforeach
-                {{--<div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/3.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/4.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/5.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/6.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/7.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/8.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/9.jpeg')}}}"> </a>
-                </div>
-                <div class="d-flex mt-5 align-items-center justify-content-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/10.jpeg')}}}"> </a>
-                </div>
-                <div class="d-flex mt-5 align-items-center justify-content-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/11.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/12.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/13.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/14.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/15.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/16.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/17.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/18.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/19.jpeg')}}}"> </a>
-                </div> --}}
+
             </div>
         </div>
     </section>
