@@ -21,6 +21,10 @@
                         <a class="nav-link  " href="{{ route('get.customer-completed-request') }}"><i data-feather="box"></i><span>Completed Request</span></a>
                     </li>
                     <li class="sidebar-list">
+                        <a class="nav-link" href="/admin/about-us"><i
+                                data-feather="monitor"></i><span>About Us</span></a>
+                    </li>
+                    <li class="sidebar-list">
                         <a class="nav-link" href="{{ route('list-service') }}"><i
                                 data-feather="monitor"></i><span>Services</span></a>
                     </li>
@@ -32,6 +36,11 @@
                         <a class="nav-link" href="/admin/contact"><i
                                 data-feather="git-merge"></i><span>Contact</span></a>
                     </li>
+                    <li class="sidebar-list">
+                        <a class="nav-link" href="/admin/facilities"><i
+                                data-feather="git-merge"></i><span>Facilities</span></a>
+                    </li>
+
                     <li class="sidebar-list">
                         <a class="nav-link " href="{{ route('get.feedback') }}"><i data-feather="users"></i><span>Feedback</span></a>
                     </li>
