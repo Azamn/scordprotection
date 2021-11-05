@@ -37,20 +37,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (@$allFeedback as $feedback)
+                        @foreach (@$allFeedback as $key => $feedback)
                         <tr>
-                            <th scope="row">{{ $feedback['id'] }}</th>
+                            <th scope="row">{{ $key + 1 }}</th>
                             <td>{{ $feedback['name'] }}</td>
                             <td>{{ $feedback['message'] }}</td>
-                            <td> <div class="media mb-2">
-                                <div class="media-body text-end">
-                                  <label class="switch">
-                                    <input type="checkbox" data-bs-original-title="" title=""><span class="switch-state"></span>
-                                  </label>
-                                </div>
-                              </div></td>
                             <td>
-                                <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
+                                <div class="media-body  switch-m">
+                                    <label class="switch">
+                                        <input type="checkbox" onchange="feedback_active_toggle_function({{$feedback['id']}})" @if($feedback['status']) checked=""@endif ><span class="switch-state" ></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger m-2" data-id="{{ $feedback['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>
                         @endforeach
@@ -66,60 +66,86 @@
 @section('js')
 
 <script>
-    function tag_delete(feedback_id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            // icon: 'warning',
-            showCancelButton: true,
-            allowOutsideClick: false,
-            cancelButtonColor: '#7366ff',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Delete'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'DELETE',
-                    url: "/admin/feedback/" + feedback_id,
-                    data: {
-                        "_token": "{{ csrf_token() }}",
+
+    function feedback_active_toggle_function(feedback_id){
+        var feedback_id = feedback_id;
+
+        $.ajax({
+            headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:'{{ route("feedback.change.status") }}',
+                method:'GET',
+                data:{
+                    feedback_id:feedback_id
                     },
-                    success: function (data) {
-                        $('#' + feedback_id).fadeOut('fast', function () {
-                            $('#' + feedback_id).remove();
+                dataType:'json',
+            success : function(data){
+
+                if(data.status == true){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 3000
                         });
-                        $.notify({
-                            // title:'Title',
-                            message: 'Feature Successfully Deleted!'
-                        }, {
-                            type: 'success',
-                            allow_dismiss: false,
-                            newest_on_top: false,
-                            mouse_over: false,
-                            showProgressbar: false,
-                            spacing: 10,
-                            timer: 500,
-                            placement: {
-                                from: 'top',
-                                align: 'right'
-                            },
-                            offset: {
-                                x: 30,
-                                y: 60
-                            },
-                            delay: 500,
-                            z_index: 10000,
-                            animate: {
-                                enter: 'animated fadeIn',
-                                exit: 'animated fadeOut'
-                            }
-                        });
-                        // location.reload();
-                    }
-                });
-            }
+
+                        location.reload(true);
+                }
+
+                        // title:'Title',
+            },
+            error : function(data){
+            },
         });
     }
+
+    // delete
+    $(document).on('click','#deleteBtn', function(){
+
+    var form = this;
+    var feedback_id = $(form).attr('data-id');
+    var url = '{{ route("feedback.delete") }}';
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        // icon: 'warning',
+        showCancelButton: true,
+        allowOutsideClick: false,
+        cancelButtonColor: '#7366ff',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Delete'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:url,
+                method:'DELETE',
+                data:{feedback_id:feedback_id},
+                dataType:'json',
+
+            success:function(data){
+                if(data.status == true){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        location.reload(true);
+                }
+            }
+
+            });
+        }
+    });
+    });
+
 
 </script>
 @endsection

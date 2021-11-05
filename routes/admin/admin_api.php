@@ -31,6 +31,8 @@ Route::get('/customer/request',[GetInTouchController::class, 'getAll'])->name('c
 Route::post('/create/get-in-touch',[GetInTouchController::class, 'create']);
 Route::delete('/delete/request',[GetInTouchController::class,'delete'])->name('delete.request');
 Route::get('/customer/completed/request',[GetInTouchController::class,'getCompletedRequest'])->name('get.customer-completed-request');
+Route::get('/change/request/status',[GetInTouchController::class, 'changeRequestStatus'])->name('request.change.status');
+
 
 /** Route :: OurClients */
 Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll'])->name('all-ourClients');
@@ -54,5 +56,7 @@ Route::post('/create/feature',[FeatureController::class, 'create']);
 /** Route :: Feedback */
 Route::get('customer/feedback',[FeedbackController::class,'getAll'])->name('get.feedback');
 Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
+Route::delete('/delete/feedback',[FeedbackController::class, 'delete'])->name('feedback.delete');
+Route::get('/change/feedback/status',[FeedbackController::class, 'changeFeedbackStatus'])->name('feedback.change.status');
 
 Route::get('/home',[HomePageController::class, 'index']);

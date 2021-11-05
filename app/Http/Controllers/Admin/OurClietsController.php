@@ -123,13 +123,11 @@ class OurClietsController extends Controller
     public function changeClientStatus(Request $request){
 
         $ourClient = OurClient::where('id', $request->client_id)->first();
-
         if($ourClient){
-            $ourClient->status = $request->status;
+            $ourClient->status = !$ourClient->status;
             $ourClient->save();
             return response()->json(['status' => true, 'message' => 'Status Updated Successfully.']);
         }
-
 
     }
 }

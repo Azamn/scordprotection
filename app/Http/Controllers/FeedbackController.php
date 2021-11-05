@@ -55,4 +55,26 @@ class FeedbackController extends Controller
             return response()->json(['status' => true, 'message' => 'Your Feedback Successfully Added.']);
         }
     }
+
+    public function delete(Request $request){
+
+        $feedback = MasterFeedback::where('id',$request->feedback_id)->first();
+        if($feedback){
+            $feedback->delete();
+            return response()->json(['status' => true, 'message' => 'FeedBack Deleted Successfully.']);
+        }
+
+    }
+
+    public function changeFeedbackStatus(Request $request){
+
+        $feedback = MasterFeedback::where('id', $request->feedback_id)->first();
+        if($feedback){
+            $feedback->status = !$feedback->status;
+            $feedback->save();
+            return response()->json(['status' => true, 'message' => 'Status Updated Successfully.']);
+        }
+
+    }
+
 }

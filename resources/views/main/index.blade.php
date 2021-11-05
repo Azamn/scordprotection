@@ -185,7 +185,7 @@
                     <a href="#"><img alt="" src="{{ $ourClient['image_url'] }}"> </a>
                 </div>
                 @endforeach
-                {{--<div class="text-center">
+                {{-- <div class="text-center">
                     <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
                 </div>
                 <div class="text-center">
@@ -193,58 +193,11 @@
                 </div>
                 <div class="text-center">
                     <a href="#"><img alt="" src="{{{asset('images/scordimg/4.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/5.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/6.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/7.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/8.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/9.jpeg')}}}"> </a>
-                </div>
-                <div class="d-flex mt-5 align-items-center justify-content-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/10.jpeg')}}}"> </a>
-                </div>
-                <div class="d-flex mt-5 align-items-center justify-content-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/11.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/12.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/13.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/14.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/15.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/16.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/17.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/18.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/19.jpeg')}}}"> </a>
                 </div> --}}
+
             </div>
         </div>
     </section>
-
-
-
 
 
     <section class="">
@@ -319,26 +272,15 @@
             </div>
             <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
+                @foreach ($feedBackData as $key => $feedback )
+                @if($feedback)
                 <div class="testimonial-item pt-0">
-                    <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
-                    <span>Alan Monre</span>
-                    <span>CEO, Square Software</span>
+                    <p>{{ $feedback['message'] }}</p>
+                    <span>{{ $feedback['name'] }}</span>
+                    {{-- <span>CEO, Square Software</span> --}}
                 </div>
-                <!-- end: Testimonials item-->
-                <!-- Testimonials item -->
-                <div class="testimonial-item pt-0">
-                    <p>Polo is by far the most amazing template out there! I literally could not be happier that I chose to buy this template!</p>
-                    <span>Alan Monre</span>
-                    <span>CEO, Square Software</span>
-                </div>
-                <!-- end: Testimonials item-->
-                <!-- Testimonials item -->
-                <div class="testimonial-item pt-0">
-                    <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
-                    <span>Alan Monre</span>
-                    <span>CEO, Square Software</span>
-                </div>
-                <!-- end: Testimonials item-->
+                @endif
+                @endforeach
             </div>
         </div>
     </section>

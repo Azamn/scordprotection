@@ -92,13 +92,25 @@ class GetInTouchController extends Controller
         }
     }
 
-    public function delete(Request $request, $requestId){
+    public function delete(Request $request){
 
-        $getInTouch = GetInTouch::where('id',$requestId)->first();
+        $getInTouch = GetInTouch::where('id',$request->request_id)->first();
         if($getInTouch){
             $getInTouch->delete();
             return response()->json(['status' => true, 'message' => 'Request Deleted Successfully.']);
         }
 
     }
+
+    public function changeRequestStatus(Request $request){
+
+        $getInTouch = GetInTouch::where('id', $request->request_id)->first();
+        if($getInTouch){
+            $getInTouch->status = !$getInTouch->status;
+            $getInTouch->save();
+            return response()->json(['status' => true, 'message' => 'Status Updated Successfully.']);
+        }
+
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Feature;
+use App\Models\MasterFeedback;
 use App\Models\MasterService;
 use App\Models\OurClient;
 use Illuminate\Http\Request;
@@ -76,9 +77,21 @@ class HomePageController extends Controller
             array_push($ourClientData, $data);
         }
 
+        $feedBackData = [];
+        $feedbacks = MasterFeedback::where('status',1)->get();
+        foreach($feedbacks as $feedback){
+            $data = [
+                'id' => $feedback->id,
+                'name' => $feedback->name,
+                'message' => $feedback->message,
+            ];
+
+            array_push($feedBackData, $data);
+        }
+
         //return $ourClientData;
 
-        return view("main.index", compact('aboutUsData', 'servicesData', 'featuresData', 'ourClientData'));
+        return view("main.index", compact('aboutUsData', 'servicesData', 'featuresData', 'ourClientData','feedBackData'));
     }
 
     public function ourClientsView(Request $request)

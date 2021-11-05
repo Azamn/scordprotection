@@ -47,14 +47,11 @@
                                 {{-- <div class="media mb-2">
                                 <div class="media-body text-end"> --}}
 
-                                    <label class="switch">
-                                        {{-- <input data-id="{{ $client['id'] }}" id="toggleStatus" class="toggle-class" type="checkbox"
-                                            data-onstyle="success"
-                                                data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="Inactive"
-                                                 {{ $client['status'] ? 'checked' : '' }}> --}}
-
-                                        <input type="checkbox" id="togBtn" value="true" data-bs-original-title="" title=""><span class="switch-state"></span> --}}
-                                    </label>
+                                    <div class="media-body  switch-m">
+                                        <label class="switch">
+                                            <input type="checkbox" onchange="client_active_toggle_function({{$client['id']}})" @if($client['status']) checked=""@endif ><span class="switch-state" ></span>
+                                        </label>
+                                    </div>
 
 
                                 {{-- </div>
@@ -92,6 +89,40 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 <script>
+
+        function client_active_toggle_function(client_id){
+            var client_id = client_id;
+
+            $.ajax({
+                headers: {
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:'{{ route("client.change.status") }}',
+                    method:'GET',
+                    data:{
+                        client_id:client_id
+                        },
+                    dataType:'json',
+                success : function(data){
+
+                    if(data.status == true){
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+
+                            location.reload(true);
+                    }
+
+                            // title:'Title',
+                },
+                error : function(data){
+                },
+            });
+        }
 
     // delete
      $(document).on('click','#deleteBtn', function(){
@@ -140,44 +171,4 @@
 
 </script>
 
-{{-- <script>
-
-
-    $(function(){
-        $('#toggleStatus').click(function(){
-
-            var = status = $(this).prop('checked') == true ? 1 : 0;
-            var client_id = $(this).data('id');
-
-            console.log(status);
-            $.ajax({
-                headers: {
-                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                type:"GET",
-                dataType:"Json",
-                url:'{{ route("client.change.status") }}',
-                data:{
-                    'status':status,
-                    'client_id':client_id
-                },
-                success: function(data){
-                    if(data.status == true){
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 3000
-                            });
-                            location.reload(true);
-                    }
-
-                }
-            });
-
-        });
-    })
-
-</script> --}}
 @endsection
