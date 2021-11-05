@@ -6,13 +6,11 @@
     <!-- Inspiro Slider -->
     <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
         <!-- Slide 1 -->
-        <div class="slide" style="background-image:url('images/background.png');">
-            <div class="bg-overlay"></div>
+        <div class="slide" style="background-image:url('images/background1.png');">
+
             <div class="container">
                 <div class="slide-captions text-center text-light">
-                    <!-- Captions -->
-                    <h2>SCORD</h2>
-                    <!-- end: Captions -->
+
                 </div>
             </div>
         </div>
@@ -81,14 +79,14 @@
 
     <!-- SERVICES -->
     <section class="background-grey">
-        <div class="container-fluid">
+        <div class="container">
             <div class="text-center heading-text heading-section">
                 <h2> Our Featured Security Services </h2>
                 <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
                 @foreach (@$servicesData as $service)
-                <div class="offset-md-2 col-lg-2">
+                <div class="col-lg-4">
                     <div class="team-image">
                         <img src="{{ $service['image_url'] }}" width="100%">
                     </div>
