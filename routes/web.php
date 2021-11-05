@@ -74,6 +74,16 @@ Route::get('/admin/contact', function () {
 });
 
 
+Route::get('/admin/facilities', function () {
+    return view('admin.Facilities.facilities');
+});
+
+
+Route::get('/admin/facilities-create', function () {
+    return view('admin.Facilities.facilities-create');
+});
+
+
 Route::get('/admin/feedback', function () {
     return view('admin.User.feedback');
 });

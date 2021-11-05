@@ -32,7 +32,7 @@
                                         <p class="f-w-900 font-roboto">Total Request<span
                                                 class="badge pill-badge-primary ml-3">New</span></p>
                                         <div class="progress-box">
-                                            <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $totalrequestCount }}</span></h4>
+                                            <h4 class="f-w-900 mb-0 f-26"><span class="counter">12</span></h4>
                                             <div
                                                 class="progress sm-progress-bar progress-animate app-right d-flex justify-content-end">
                                                 <div class="progress-gradient-primary" role="progressbar"
@@ -54,7 +54,7 @@
                                     <div class="media-body">
                                         <p class="f-w-900 font-roboto" >Request Pending<span
                                                 class="badge pill-badge-primary ml-3">Hot</span></p>
-                                        <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $pendingRequestCount }}</span></h4>
+                                        <h4 class="f-w-900 mb-0 f-26"><span class="counter">23</span></h4>
                                     </div>
                                     <div class="ecommerce-box light-bg-primary"><i class="fa fa-heart"
                                             aria-hidden="true"></i></div>
@@ -70,7 +70,7 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <p><span class="f-w-900 font-roboto">Request Completed</span></p>
-                                        <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $completedRequestCount }}</span></h4>
+                                        <h4 class="f-w-900 mb-0 f-26"><span class="counter">35</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                             <div class="media-body">
                                 <p class="f-w-900 font-roboto">Feedback<span
                                         class="badge pill-badge-primary ml-3">Hot</span></p>
-                                <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $feedBackCount }}</span></h4>
+                                <h4 class="f-w-900 mb-0 f-26"><span class="counter">98</span></h4>
                             </div>
                             <div class="ecommerce-box light-bg-primary"><i class="fa fa-heart"
                                     aria-hidden="true"></i></div>
