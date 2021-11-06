@@ -11,7 +11,7 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"><i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item"><a href=""> Our Clients</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('get.all-features') }}"> Facilities</a></li>
                         <li class="breadcrumb-item active">Create</li>
                     </ol>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="card-header">
                         <h5>Facilities Details</h5>
                     </div>
-                    <form class="widget-contact-form" id="clientAdd" action="" method="POST" enctype="multipart/form-data">
+                    <form class="widget-contact-form" id="facilitiesAdd" action="{{ route('create.feature') }}" method="POST" enctype="multipart/form-data">
                     {{-- <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" > --}}
                         @csrf
                         <div class="card-body">
@@ -75,7 +75,7 @@
 
     $(function(){
 
-        $('#clientAdd').on('submit', function(e){
+        $('#facilitiesAdd').on('submit', function(e){
             e.preventDefault();
             var form = this;
             var token = $('meta[name="csrf-token"]').attr('content');

@@ -10,8 +10,8 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"> <i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item active">Our Clients</li>
-                                      <li class="breadcrumb-item active">Product list</li>
+                        <li class="breadcrumb-item active">About US</li>
+                                      {{-- <li class="breadcrumb-item active">Product list</li> --}}
                     </ol>
                 </div>
             </div>
@@ -31,29 +31,31 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">About Name</th>
+                            <th scope="col">About Title</th>
                             <th scope="col">Description</th>
                             <th scope="col">Show</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        @foreach ($aboutUsData as $key => $about)
                          <tr>
-                            <th scope="row">1</th>
-                            <td>Alexander</td>
-                            <td>kjasgdjkhagsdmjyasd kljhadsjk hadsg kadhjsgadsn j</td>
-                            <td> <div class="media mb-2">
-                                <div class="media-body text-end">
-                                  <label class="switch">
-                                    <input type="checkbox" data-bs-original-title="" title=""><span class="switch-state"></span>
-                                  </label>
-                                </div>
-                              </div></td>
+                            <th scope="row">{{ $key + 1 }}</th>
+                            <td>{{ $about['title'] }}</td>
+                            <td>{{ $about['description'] }}</td>
                             <td>
-                                <button class="btn btn-danger" onclick="tag_delete()" type="submit">Delete</button>
+                                <div class="media-body  switch-m">
+                                    <label class="switch">
+                                        <input type="checkbox" onchange="aboutUs_active_toggle_function({{$about['id']}})" @if($about['status']) checked=""@endif ><span class="switch-state" ></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                {{-- <a class="btn btn-primary m-2" data-id="{{ $facilities['id'] }}" id="editBtn">Edit</a> --}}
+                                <button class="btn btn-danger m-2" data-id="{{ $about['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -67,91 +69,85 @@
 
 <script>
 
-    // delete
-     $(document).on('click','#deleteBtn', function(){
+    function aboutUs_active_toggle_function(aboutus_id){
+        var aboutus_id = aboutus_id;
 
-        var form = this;
-        var client_id = $(form).attr('data-id');
-        var url = ' route("client.delete") ';
-
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            // icon: 'warning',
-            showCancelButton: true,
-            allowOutsideClick: false,
-            cancelButtonColor: '#7366ff',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Delete'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    headers: {
-                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        $.ajax({
+            headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:'{{ route("about-us.change.status") }}',
+                method:'GET',
+                data:{
+                    aboutus_id:aboutus_id
                     },
-                    url:url,
-                    method:'DELETE',
-                    data:{client_id:client_id},
-                    dataType:'json',
+                dataType:'json',
+            success : function(data){
 
-                success:function(data){
-                    if(data.status == true){
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 3000
-                            });
-                            location.reload(true);
-                    }
+                if(data.status == true){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+
+                        location.reload(true);
                 }
 
-                });
-            }
+                        // title:'Title',
+            },
+            error : function(data){
+            },
         });
-    });
+    }
 
-</script>
+// delete
+    $(document).on('click','#deleteBtn', function(){
 
- <script>
+    var form = this;
+    var aboutus_id = $(form).attr('data-id');
+    var url = '{{ route("about-us.delete") }}';
 
-
-    $(function(){
-        $('#toggleStatus').click(function(){
-
-            var = status = $(this).prop('checked') == true ? 1 : 0;
-            var client_id = $(this).data('id');
-
-            console.log(status);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        // icon: 'warning',
+        showCancelButton: true,
+        allowOutsideClick: false,
+        cancelButtonColor: '#7366ff',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Delete'
+    }).then((result) => {
+        if (result.isConfirmed) {
             $.ajax({
                 headers: {
-                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                type:"GET",
-                dataType:"Json",
-                url:' route("client.change.status") ',
-                data:{
-                    'status':status,
-                    'client_id':client_id
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(data){
-                    if(data.status == true){
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: data.message,
-                                showConfirmButton: false,
-                                timer: 3000
-                            });
-                            location.reload(true);
-                    }
+                url:url,
+                method:'DELETE',
+                data:{aboutus_id:aboutus_id},
+                dataType:'json',
 
+            success:function(data){
+                if(data.status == true){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        location.reload(true);
                 }
-            });
+            }
 
-        });
-    })
+            });
+        }
+    });
+});
 
 </script>
+
 @endsection

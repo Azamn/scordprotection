@@ -100,8 +100,6 @@
                 beforeSend:function(response){
                     $(form).find('span.error-text').text('');
                 },
-
-
                 success:function(data){
                     if(data.status == false){
                         $.each(data.errors, function(prefix,val){

@@ -24,7 +24,9 @@ use App\Models\GetInTouch;
 
 /** Route :: About-US */
 Route::get('/get-all/about-us',[AboutUsController::class,'getAll'])->name('about-us.getAll');
-Route::post('/create/about-us',[AboutUsController::class,'create'])->name('about-us.create');
+Route::post('/create/about-us',[AboutUsController::class,'create'])->name('store.about-us');
+Route::delete('/delete/about-us',[AboutUsController::class, 'delete'])->name('about-us.delete');
+Route::get('/change/about-us/status',[AboutUsController::class, 'changeAboutUsStatus'])->name('about-us.change.status');
 
 /** Route:: GetInTouch */
 Route::get('/customer/request',[GetInTouchController::class, 'getAll'])->name('customer-request-all');
@@ -50,8 +52,11 @@ Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
 Route::delete('/delete/service',[ServiceController::class,'delete'])->name('delete.service');
 
 /** Route :: features */
-Route::get('/get-all/features', [FeatureController::class, 'getAll']);
-Route::post('/create/feature',[FeatureController::class, 'create']);
+Route::get('/get-all/features', [FeatureController::class, 'getAll'])->name('get.all-features');
+Route::post('/create/feature',[FeatureController::class, 'create'])->name('create.feature');
+Route::delete('/delete/feature',[FeatureController::class, 'delete'])->name('feature.delete');
+Route::get('/change/feature/status',[FeatureController::class, 'changeFeatureStatus'])->name('feature.change.status');
+
 
 /** Route :: Feedback */
 Route::get('customer/feedback',[FeedbackController::class,'getAll'])->name('get.feedback');

@@ -11,8 +11,8 @@
                 <div class="col-6">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard"><i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item"><a href=""> Our Clients</a></li>
-                        <li class="breadcrumb-item active">Create</li>
+                        <li class="breadcrumb-item"><a href="{{ route('about-us.getAll') }}">About US</a></li>
+                        {{-- <li class="breadcrumb-item active">Create</li> --}}
                     </ol>
                 </div>
             </div>
@@ -24,9 +24,9 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>About Us Details</h5>
+                        <h5>About-US Details</h5>
                     </div>
-                    <form class="widget-contact-form" id="clientAdd" action="" method="POST" enctype="multipart/form-data">
+                    <form class="widget-contact-form" id="aboutusAdd" action="{{ route('store.about-us') }}" method="POST" enctype="multipart/form-data">
                     {{-- <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" > --}}
                         @csrf
                         <div class="card-body">
@@ -34,16 +34,17 @@
                                 <div class="col">
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Name</label>
+                                        <label class="col-sm-3 col-form-label">Title</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="name" id="name" class="form-control"  placeholder="About Us Name">
+                                            <input type="text" name="name" id="name" class="form-control"  placeholder="About Us Title">
                                             <span class="text-danger error-text name_error"></span>
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Description</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="name" id="name" class="form-control"  placeholder="Description">
+                                            <textarea type="text" name="description" id="description" class="form-control"  placeholder="About-us Description" required></textarea>
                                             <span class="text-danger error-text name_error"></span>
                                         </div>
                                     </div>
@@ -82,7 +83,7 @@
 
     $(function(){
 
-        $('#clientAdd').on('submit', function(e){
+        $('#aboutusAdd').on('submit', function(e){
             e.preventDefault();
             var form = this;
             var token = $('meta[name="csrf-token"]').attr('content');
@@ -100,7 +101,6 @@
                     $(form).find('span.error-text').text('');
                 },
 
-
                 success:function(data){
                     if(data.status == false){
                         $.each(data.errors, function(prefix,val){
@@ -117,8 +117,8 @@
                                 timer: 1500
                             });
 
+                        }
                     }
-                }
             });
 
         });
@@ -145,9 +145,9 @@
                     $(img_holder).html('This browser does not support FileReader.');
                 }
             }
-        })
+        });
 
-    })
+    });
 
 </script>
 

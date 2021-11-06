@@ -14,7 +14,22 @@ class FeatureController extends Controller
     public function getAll(Request $request){
 
         $features = Feature::get();
-        return response()->json(['status' => true, 'data' => FeatureResource::collection($features)]);
+
+        $facilitiesData = [];
+
+        foreach($features as $feature){
+            $data = [
+                'id' => $feature->id,
+                'name' => $feature->name,
+                'status' => $feature->status,
+            ];
+
+            array_push($facilitiesData, $data);
+        }
+
+        return view('admin.Facilities.facilities',compact('facilitiesData'));
+
+        // return response()->json(['status' => true, 'data' => FeatureResource::collection($features)]);
     }
 
     public function create(Request $request){
@@ -36,6 +51,28 @@ class FeatureController extends Controller
            $features->save();
 
            return response()->json(['status' => true, 'message' => 'Feature Added Successfully.']);
+        }
+
+    }
+
+    public function delete(Request $request)
+    {
+
+        $feature = Feature::where('id', $request->feature_id)->first();
+
+        if ($feature) {
+            $feature->delete();
+            return response()->json(['status' => true, 'message' => 'Feature Data Deleted Successfully.']);
+        }
+    }
+
+    public function changeFeatureStatus(Request $request){
+
+        $feature = Feature::where('id', $request->feature_id)->first();
+        if($feature){
+            $feature->status = !$feature->status;
+            $feature->save();
+            return response()->json(['status' => true, 'message' => 'Status Updated Successfully.']);
         }
 
     }
