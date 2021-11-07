@@ -3,8 +3,6 @@
         <div class="container">
             <div class="header-extras">
                 <ul>
-
-
                     <li class="mr-3 d-sm-block d-lg-none d-xl-none ">
                         <a class="btn btn-sm text-white" href="tel:+918452857451"> <i class="icon-phone mr-1"></i> Call
                             Us</a>
@@ -39,7 +37,7 @@
                             <li class="mt-3"><a href="#aboutus">About Us</a>
 
                             </li>
-                          
+
                             <li class="dropdown mt-3"><a href="href={{ route('our-service') }}">Our Services</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="header-topbar.html">Light</a></li>

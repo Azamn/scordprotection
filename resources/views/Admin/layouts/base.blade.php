@@ -58,11 +58,11 @@
 
 
 
-<body>
+<body >
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
 
-    <div class="page-body-wrapper horizontal-menu">
+    <div class="page-body-wrapper horizontal-menu" style="background-color:#2a323b">
     @include('Admin.layouts.sidebar')
     @include('Admin.layouts.navbar')
     @yield('content')

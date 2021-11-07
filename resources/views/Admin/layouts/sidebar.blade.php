@@ -1,5 +1,5 @@
 <!-- Page Sidebar Start-->
-<div class="sidebar-wrapper">
+<div class="sidebar-wrapper" >
     <div class="logo-wrapper" style="box-shadow: none"><a href="/admin/dashboard"><img class="img-fluid"
                 src="{{asset('images/scordimg/Scord.png')}}" alt=""></a></div>
     <div class="logo-icon-wrapper"><a href="/admin/dashboard"><img class="img-fluid"

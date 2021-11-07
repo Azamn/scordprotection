@@ -1,6 +1,6 @@
 <!-- Page Header Start-->
-<div class="page-header">
-            <div class="header-wrapper row m-0">
+<div class="page-header" style="background-color:#07a8c9">
+            <div class="header-wrapper bg-primmrary row m-0">
                 <form class="form-inline search-full" action="#" method="get">
                     <div class="form-group w-100">
                         <div class="Typeahead Typeahead--twitterUsers">
@@ -33,82 +33,18 @@
                 </div>
                 <div class="nav-right col-8 text-right pull-right right-header p-0">
                     <ul class="nav-menus">
-                        {{-- <li class="onhover-dropdown">
-                            <div class="notification-box"><i data-feather="bell"></i><span
-                                    class="badge badge-pill badge-secondary">4</span></div>
-                            <ul class="notification-dropdown onhover-show-div">
-                                <li class="bg-primary text-center">
-                                    <h6 class="f-18 mb-0">Notitication</h6>
-                                    <p class="mb-0">You have 4 new notification</p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-circle-o mr-3 font-primary"> </i>Delivery processing <span
-                                            class="pull-right">10 min.</span></p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-circle-o mr-3 font-success"></i>Order Complete<span
-                                            class="pull-right">1 hr</span></p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-circle-o mr-3 font-info"></i>Tickets Generated<span
-                                            class="pull-right">3 hr</span></p>
-                                </li>
-                                <li>
-                                    <p><i class="fa fa-circle-o mr-3 font-danger"></i>Delivery Complete<span
-                                            class="pull-right">6 hr</span></p>
-                                </li>
-                                <li><a class="btn btn-primary" href="#">Check all notification</a></li>
-                            </ul>
-                        </li> --}}
+
                         <li>
-                            <div class="mode"><i class="fa fa-moon-o"></i></div>
+                            <div class="mode"><i style="color:white" class="fa fa-moon-o"></i></div>
                         </li>
 
-                        {{-- <li class="onhover-dropdown"><i data-feather="message-square"></i>
-                            <ul class="chat-dropdown onhover-show-div">
-                                <li class="bg-primary text-center">
-                                    <h6 class="f-18 mb-0">Message Box</h6>
-                                    <p class="mb-0">You have 3 new messages </p>
-                                </li>
-                                <li>
-                                    <div class="media"><img class="img-fluid rounded-circle mr-3"
-                                            src="{{asset('Assets/Admin//images/user/1.jpg')}}" alt="">
-                                        <div class="status-circle online"></div>
-                                        <div class="media-body"><span>Erica Hughes</span>
-                                            <p>Lorem Ipsum is simply dummy...</p>
-                                        </div>
-                                        <p class="f-12 font-success">58 mins ago</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media"><img class="img-fluid rounded-circle mr-3"
-                                            src="{{asset('Assets/Admin//images/user/2.jpg')}}" alt="">
-                                        <div class="status-circle online"></div>
-                                        <div class="media-body"><span>Kori Thomas</span>
-                                            <p>Lorem Ipsum is simply dummy...</p>
-                                        </div>
-                                        <p class="f-12 font-success">1 hr ago</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media"><img class="img-fluid rounded-circle mr-3"
-                                            src="{{asset('Assets/Admin//images/user/4.jpg')}}" alt="">
-                                        <div class="status-circle offline"></div>
-                                        <div class="media-body"><span>Ain Chavez</span>
-                                            <p>Lorem Ipsum is simply dummy...</p>
-                                        </div>
-                                        <p class="f-12 font-danger">32 mins ago</p>
-                                    </div>
-                                </li>
-                                <li class="text-center"> <a class="btn btn-primary" href="#">View All </a></li>
-                            </ul>
-                        </li> --}}
-                        <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
-                                    data-feather="maximize"></i></a></li>
+
+                        <li class="maximize"><a class="text-light" href="#!" onclick="javascript:toggleFullScreen()"><i
+                             data-feather="maximize"></i></a></li>
                         <li class="profile-nav onhover-dropdown p-0 mr-0">
                             <div class="media profile-media"><img class="b-r-10"
                                     src="{{asset('Assets/Admin//images/dashboard/wanc_logo.jpeg')}}" alt="" width="38px">
-                                <div class="media-body"><span>WANC</span>
+                                <div class="media-body text-white"><span>WANC</span>
                                     <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
                                 </div>
                             </div>

@@ -1,11 +1,11 @@
 @extends('Admin.layouts.base')
 
 @section('content')
-<div class="page-body">
+<div class="page-body" >
     <div class="container-fluid">
         <div class="page-title">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 text-white">
                     <h3>Dashboard</h3>
                 </div>
                 <div class="col-6">
@@ -25,12 +25,11 @@
             <div class="col-xl-7 box-col-12 xl-100">
                 <div class="row dash-chart">
                     <div class="col-xl-6 box-col-6 col-lg-12 col-md-6">
-                        <div class="card o-hidden">
+                        <div class="card o-hidden" style="background-color :#07a8c9">
                             <div class="card-body">
                                 <div class="media">
-                                    <div class="media-body">
-                                        <p class="f-w-900 font-roboto">Total Request<span
-                                                class="badge pill-badge-primary ml-3">New</span></p>
+                                    <div class="media-body text-white">
+                                        <p class="f-w-900 font-roboto text-white">Total Request</p>
                                         <div class="progress-box">
                                             <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $totalrequestCount }}</span></h4>
                                             <div
@@ -48,12 +47,11 @@
                     </div>
 
                     <div class="col-xl-6 box-col-6 col-lg-12 col-md-6">
-                        <div class="card o-hidden">
-                            <div class="card-body">
+                        <div class="card o-hidden"  style="background-color :#07a8c9">
+                            <div class="card-body text-white">
                                 <div class="ecommerce-widgets media">
                                     <div class="media-body">
-                                        <p class="f-w-900 font-roboto" >Request Pending<span
-                                                class="badge pill-badge-primary ml-3">Hot</span></p>
+                                        <p class="f-w-900 font-roboto text-white" >Request Pending</p>
                                         <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $pendingRequestCount }}</span></h4>
                                     </div>
                                     <div class="ecommerce-box light-bg-primary"><i class="fa fa-heart"
@@ -64,13 +62,13 @@
                     </div>
 
                     <div class="col-xl-6 box-col-6 col-md-6">
-                        <div class="card o-hidden">
-                            <div class="card-header card-no-border">
+                        <div class="card o-hidden" >
+                            <div class="card-header card-no-border" style="background-color :#a7c724">
 
                                 <div class="media">
                                     <div class="media-body">
-                                        <p><span class="f-w-900 font-roboto">Request Completed</span></p>
-                                        <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $completedRequestCount }}</span></h4>
+                                        <p><span class="f-w-900 text-white font-roboto">Request Completed</span></p>
+                                        <h4 class="f-w-900 mb-0 text-white f-26"><span class="counter">{{ $completedRequestCount }}</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -88,11 +86,11 @@
                     </div>
                     <div class="col-xl-6 box-col-6 col-md-6">
                         <div class="card o-hidden">
-                            <div class="card-header card-no-border">
+                            <div class="card-header  text-white card-no-border" style="background-color :#a7c724">
 
                                 <div class="media">
                                     <div class="media-body">
-                                        <p><span class="f-w-900 font-roboto">Request </span></p>
+                                        <p><span class="f-w-900 text-white font-roboto">Request </span></p>
                                         <h4 class="f-w-900 mb-0 f-26 counter">1</h4>
                                     </div>
                                 </div>
@@ -104,15 +102,14 @@
                 </div>
             </div>
             <div class="col-xl-7 box-col-7 col-lg-12 col-md-7">
-                <div class="card o-hidden">
+                <div class="card o-hidden text-white" style="background-color :#f6a607">
                     <div class="card-body">
                         <div class="ecommerce-widgets media">
                             <div class="media-body">
-                                <p class="f-w-900 font-roboto">Feedback<span
-                                        class="badge pill-badge-primary ml-3">Hot</span></p>
+                                <p class="f-w-900 font-roboto">Feedback</p>
                                 <h4 class="f-w-900 mb-0 f-26"><span class="counter">{{ $feedBackCount }}</span></h4>
                             </div>
-                            <div class="ecommerce-box light-bg-primary"><i class="fa fa-heart"
+                            <div class="ecommerce-box light-bg-primary"><i  class="fa fa-heart"
                                     aria-hidden="true"></i></div>
                         </div>
                     </div>
