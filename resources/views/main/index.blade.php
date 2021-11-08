@@ -78,8 +78,8 @@
     <!-- end: About us -->
 
     <!-- SERVICES -->
-    <section class="background-grey">
-        <div class="container">
+    <section class="background" style="background-color: #07a8c9">
+        <div class="container text-white">
             <div class="text-center heading-text heading-section">
                 <h2> Our Featured Security Services </h2>
                 <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
@@ -173,7 +173,7 @@
 
     <!-- Client logo -->
     <section class="background-grey text-center">
-        <div class="container-fluid">
+        <div class="container">
             <div class="text-center heading-text heading-section">
                 <h2>OUR CLIENTS</h2>
             </div>
@@ -266,10 +266,10 @@
     </section>
 
 
-    <section class="background-grey p-50">
-        <div class="container">
-            <div class="text-center heading-text heading-section">
-                <h2>TESTIMONIALS</h2>
+    <section class="background p-50"  style="background-color: #07a8c9">
+        <div class="container text-white">
+            <div class="text-center mb-0 heading-text heading-section">
+                <h2 class="mb-2">TESTIMONIALS</h2>
             </div>
             <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
@@ -277,7 +277,7 @@
                 @if($feedback)
                 <div class="testimonial-item pt-0">
                     <p>{{ $feedback['message'] }}</p>
-                    <span>{{ $feedback['name'] }}</span>
+                    <span>-{{ $feedback['name'] }}</span>
                     {{-- <span>CEO, Square Software</span> --}}
                 </div>
                 @endif
