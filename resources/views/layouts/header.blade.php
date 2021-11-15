@@ -38,13 +38,13 @@
 
                             </li>
 
-                            <li class="dropdown mt-3"><a href="href={{ route('our-service') }}">Our Services</a>
+                            <li class="dropdown mt-3"><a href={{ route('home') }}>Our Services</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="header-topbar.html">Light</a></li>
+                                    {{-- <li><a href="header-topbar.html">Light</a></li>
                                     <li><a href="header-topbar-dark.html">Dark</a></li>
                                     <li><a href="header-topbar-transparent.html">Transparent</a></li>
                                     <li><a href="header-topbar-colored.html">Colored</a></li>
-                                    <li><a href="header-topbar-fullwidth.html">Fullwidth</a></li>
+                                    <li><a href="header-topbar-fullwidth.html">Fullwidth</a></li> --}}
                                 </ul>
                             </li>
                             <li class="mt-3"><a href={{ route('contact-us') }}>Contact Us</a>
@@ -64,4 +64,44 @@
 
         </div>
     </div>
+
+    <script src="{{asset('Asset/website/js/functions.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+// var $ = jQuery;
+$(document).ready(function() {
+
+    fetchService();
+
+    function fetchService(){
+        $.ajax({
+            type:"GET",
+            url: "{{ Route('get.dropDownService') }}",
+            dataType: "json",
+            data: {
+                "_token" : "{{ csrf_token() }}",
+            },
+            success: function(response){
+                // console.log(response.data);
+                $.each(response.data, function (key, item){
+                    $('.dropdown-menu').append(
+                        '<li id="serviceData" data-id='+item.id+' type="submit"><a href="api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+                    );
+                })
+            }
+        });
+    }
+
+    // single data for sevice
+
+
+});
+
+
+</script>
+
 </header>
+
+
+

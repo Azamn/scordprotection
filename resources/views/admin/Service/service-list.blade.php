@@ -49,7 +49,7 @@
                             </td>
                             <td><img src="{{ $service['image_url'] }}" alt="" width = "100"></td>
                             <td>
-                                {{-- <a class="btn btn-primary m-2" data-id="{{ $service['id'] }}" id="editBtn">Edit</a> --}}
+                                {{-- <a class="btn btn-primary m-2" href="{{ route('get-single.service',$service['id']) }}" id="editBtn">Edit</a> --}}
                                 <button class="btn btn-danger m-2" data-id="{{ $service['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>
@@ -81,24 +81,6 @@
 @section('js')
 <script>
     $(function(){
-        // Edit
-        $(document).on('click','#editBtn', function(){
-            var form = this;
-            var service_id = $(form).attr('data-id');
-            var url = '{{ route("get-single.service") }}';
-
-            // $.get(url,{service_id:service_id},function(data){
-
-            //     window.location.href = '/admin/service-edit';
-
-
-
-            // },'json');
-
-
-            // "/admin/service-edit"
-
-        });
 
         // Delete
         $(document).on('click','#deleteBtn', function(){

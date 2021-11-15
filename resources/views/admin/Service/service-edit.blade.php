@@ -37,14 +37,14 @@
                                             <label class="col-sm-2 col-form-label">Title</label>
                                             <div class="col-sm-10">
                                                 <input class="form-control" type="text" placeholder="Service Title"
-                                                       value="name" name="name" required="">
+                                                       id="name" name="name" value="{{ $service['name'] }}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Description</label>
                                             <div class="col-sm-10">
                                                 <input class="form-control" type="text" placeholder="Descrition"
-                                                       value="name" name="name" required="">
+                                                       id="description" name="description" value="{{ $service['description'] }}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -81,7 +81,7 @@
 
     <script>
 
-        
+
 
     </script>
 

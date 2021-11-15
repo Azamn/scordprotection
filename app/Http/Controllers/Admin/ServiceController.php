@@ -62,13 +62,27 @@ class ServiceController extends Controller
         }
     }
 
-    public function getSingle(Request $request)
+    public function getSingle(Request $request, MasterService $service)
     {
+        // $service = MasterService::where('id', $service->id)->first();
+        $service = MasterService::where('id', $service->id)->first();
+        $serviceData = [
+            'id' => $service->id,
+            'name' => $service->name,
+            'description' => $service->description,
+            'image_url' => $service->media->isNotEmpty() ? $service->media->last()->getFullUrl() : NULL,
+        ];
 
-        $service = MasterService::where('id', $request->service_id)->first();
-        if ($service) {
-            return response()->json(['status' => true, 'data' => ServiceResource::make($service)]);
-        }
+       // return $serviceData;
+
+        return view('main.service', compact('serviceData'));
+
+
+
+        // if ($serviceData){
+
+        //     // return response()->json(['status' => true, 'data' => ServiceResource::make($service)]);
+        // }
     }
 
     public function update(Request $request, $serviceId)
@@ -110,8 +124,15 @@ class ServiceController extends Controller
     {
         $service = MasterService::where('id', $request->service_id)->first();
         if ($service) {
-           $service->delete();
-           return response()->json(['status' => true, 'message' => 'Service Deleted Successfully.']);
+            $service->delete();
+            return response()->json(['status' => true, 'message' => 'Service Deleted Successfully.']);
         }
+    }
+
+    public function getServiceFOrDropdown(Request $request)
+    {
+
+        $service = MasterService::where('status', 1)->get();
+        return response()->json(['status' => true, 'data' => $service]);
     }
 }
