@@ -140,6 +140,7 @@
 
                 <strong>
                     <h4> TO DISCUSS YOUR SECURITY REQUIREMENTS</h4>
+                    <a href="{{asset('scordpdf.pdf')}}" target="_blank" class="btn btn-lg btn-white mb-4"> Downlaod Manual</a>
                     <h4>CALL US NOW AT +91-8452857451</h4>
                 </strong>
 
