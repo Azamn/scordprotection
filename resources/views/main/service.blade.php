@@ -3,11 +3,14 @@
 @section('content')
 <div class="body-inner">
 
-    <section id="page-title" data-bg-parallax="{{{asset('images/scordimg/bg.jpg')}}}">
-        <div class="bg-overlay"></div>
+    <section class="background-colored">
+        <div id="particles-dots" class="particles"></div>
         <div class="container">
-            <div class="page-title">
-                <h1 class="text-uppercase text-medium">OUR SERVICES</h1>
+            <div class="heading-text text-light text-center">
+                <strong>
+                    <h4>OUR SERVICES</h4>
+                </strong>
+
             </div>
         </div>
     </section>

@@ -1,7 +1,7 @@
 @extends('Admin.layouts.base')
 
 @section('content')
-<div class="page-body-wrapper sidebar-icon">
+<div class="">
 
     <!-- Page Sidebar Ends-->
     <div class="page-body">

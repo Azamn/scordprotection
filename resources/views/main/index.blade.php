@@ -1,6 +1,13 @@
 @extends('layouts.base')
 
 @section('content')
+<style>
+    .lineh2::before
+    {
+        background-color:white !important;
+    }
+</style>
+
 <div class="body-inner">
 
     <!-- Inspiro Slider -->
@@ -78,10 +85,10 @@
     <!-- end: About us -->
 
     <!-- SERVICES -->
-    <section class="background-grey">
-        <div class="container">
-            <div class="text-center heading-text heading-section">
-                <h2> Our Featured Security Services </h2>
+    <section class="background" style="background-color: #07a8c9">
+        <div class="container text-white">
+            <div class="text-center heading-text heading-section" >
+                <h2 class="lineh2"> Our Featured Security Services </h2>
                 <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
@@ -98,28 +105,6 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="offset-md-1 col-lg-2">
-                    <div class="team-image">
-                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                    </div>
-                    <div class="text-center">
-                        <h3>Door frame Detectors</h3>
-                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                        </p>
-
-                    </div>
-                </div>
-                <div class=" offset-md-1 col-lg-2">
-                    <div class="team-image">
-                        <img src="{{{asset('images/scordimg/4.jpeg')}}}" width="100%">
-                    </div>
-                    <div class="text-center">
-                        <h3>Door frame Detectors</h3>
-                        <p>The most happiest time of the day!. Praesent tristique hendrerit ex ut laoreet.
-                        </p>
-
-                    </div>
-                </div> --}}
 
             </div>
     </section>
@@ -134,12 +119,7 @@
                     @foreach (@$featuresData as $feature)
                     <ul class="list-icon list-icon-arrow-circle list-icon-colored">
                         <li>{{ $feature['name'] }}</li>
-                        {{-- <li>Integer molestie lorem at massa</li>
-                        <li>Facilisis in pretium nisl aliquet</li>
-                        <li>Faucibus porta lacus fringilla vel</li>
-                        <li>Aenean sit amet erat nunc</li>
-                        <li>Eget porttitor lorem</li>
-                        <li>Beautiful nature, and rare feathers!</li> --}}
+
                     </ul>
                     @endforeach
                 </div>
@@ -153,27 +133,24 @@
     </section>
     <!-- end: SECTION GREY -->
 
-    <!-- Particle 1 -->
     <section class="background-colored">
         <div id="particles-dots" class="particles"></div>
         <div class="container">
             <div class="heading-text text-light text-center">
-                <!-- <h5 class="text-uppercase">The connected
-                        <thead></thead>
-                    </h5> -->
-                <!-- <h2 class="fw-800">Dots</h2> -->
+
                 <strong>
-                    <p>CALL US NOW AT +91-8452857451 TO DISCUSS YOUR SECURITY REQUIREMENTS</p>
+                    <h4> TO DISCUSS YOUR SECURITY REQUIREMENTS</h4>
+                    <a href="{{asset('scordpdf.pdf')}}" target="_blank" class="btn btn-lg btn-white mb-4"> Downlaod Manual</a>
+                    <h4>CALL US NOW AT +91-8452857451</h4>
                 </strong>
-                <!-- <a href="#" class="btn btn-light btn-roundeded">Read More</a> -->
+
             </div>
         </div>
     </section>
-    <!-- end: Particle 1 -->
 
     <!-- Client logo -->
     <section class="background-grey text-center">
-        <div class="container-fluid">
+        <div class="container">
             <div class="text-center heading-text heading-section">
                 <h2>OUR CLIENTS</h2>
             </div>
@@ -186,19 +163,14 @@
                     <a href="#"><img alt="" src="{{ $ourClient['image_url'] }}"> </a>
                 </div>
                 @endforeach
-                {{-- <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/2.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/3.jpeg')}}}"> </a>
-                </div>
-                <div class="text-center">
-                    <a href="#"><img alt="" src="{{{asset('images/scordimg/4.jpeg')}}}"> </a>
-                </div> --}}
+
 
             </div>
         </div>
     </section>
+
+
+
 
 
     <section class="">
@@ -266,10 +238,10 @@
     </section>
 
 
-    <section class="background-grey p-50">
-        <div class="container">
-            <div class="text-center heading-text heading-section">
-                <h2>TESTIMONIALS</h2>
+    <section class="background p-50"  style="background-color: #07a8c9">
+        <div class="container text-white">
+            <div class="text-center mb-0 heading-text heading-section">
+                <h2 class="lineh2 mb-2">TESTIMONIALS</h2>
             </div>
             <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
@@ -277,7 +249,7 @@
                 @if($feedback)
                 <div class="testimonial-item pt-0">
                     <p>{{ $feedback['message'] }}</p>
-                    <span>{{ $feedback['name'] }}</span>
+                    <span>-{{ $feedback['name'] }}</span>
                     {{-- <span>CEO, Square Software</span> --}}
                 </div>
                 @endif
@@ -311,7 +283,7 @@
                                     placeholder="Enter your Message"></textarea>
                             </div>
 
-                            <button class="btn btn-primary" onclick="feedBack()"  id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Feedback</button>
+                            <button class="btn text-white btn-primary" onclick="feedBack()"  id="form-submit"><i class=" fa fa-paper-plane"></i>&nbsp;Send Feedback</button>
 
                             {{-- <button class="btn border-dark background-grey text-dark feedback_form_button" onclick="feedBack() type="submit"
                                 id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Feedback</button> --}}
