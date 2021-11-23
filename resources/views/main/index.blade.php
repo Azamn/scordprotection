@@ -26,7 +26,7 @@
     <!--end: Inspiro Slider -->
 
     <!-- About us -->
-    <section>
+    <section id="aboutus">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">

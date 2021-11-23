@@ -86,8 +86,14 @@ $(document).ready(function() {
                 // console.log(response.data);
                 $.each(response.data, function (key, item){
                     $('.dropdown-menu').append(
-                        '<li id="serviceData" data-id='+item.id+' type="submit"><a href="api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+
+                        '<li class="service-page" id="serviceData" value='+item.id+' type="submit" ><a href="/api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+                        //'<li class="service-page" id="serviceData" data-id='+item.id+' type="submit"><a  href="api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+
                     );
+                    // $('.service-page').on('click',function(){
+                    //     pageRedirect(item.id);
+                    // });
                 })
             }
         });
@@ -96,8 +102,33 @@ $(document).ready(function() {
     // single data for sevice
 
 
+
+
 });
 
+
+
+// function pageRedirect(id) {
+//     var myURL = document.location;
+//       window.location.href = myURL + "api/admin/get-single/service/"+id;
+//     }
+
+
+
+// function servicePage(id){
+//     //debugger;
+//     var queryParams = new URLSearchParams(window.location.search);
+//     var myURL = document.location;
+//     // var host = myUrl.host;
+//     // var pathName = myUrl.pathname;
+//     //document.location = myURL + "api/admin/get-single/service/"+id;
+//     window.location.href = '';
+//     window.location.href = myURL + "api/admin/get-single/service/"+id;
+
+
+//     //window.history.replaceState(null, null, myURL + "api/admin/get-single/service/"+id);
+
+// }
 
 </script>
 
