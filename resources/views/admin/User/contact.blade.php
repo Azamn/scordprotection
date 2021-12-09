@@ -22,26 +22,29 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="needs-validation" novalidate="">
+                        <form class="needs-validation" id="update_contact" method="POST" enctype="multipart/form-data" novalidate="">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <input type="hidden" id="contact_id" value="{{ $contact->id }}">
+
                                     <label class="form-label" for="validationCustom01">Phone Number</label>
-                                    <input class="form-control" id="validationCustom01" type="number" value=""
+                                    <input class="form-control" id="mobile_no" type="number" value="{{ $contact->mobile_no }}"
                                         required="" data-bs-original-title="" title="">
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
                                 <div class=" col-md-6">
                                     <label class="form-label" for="validationCustom02">Email</label>
-                                    <input class="form-control" id="validationCustom02" type="email" value=""
+                                    <input class="form-control" id="email" type="email" value="{{ $contact->email }}"
                                         required="" data-bs-original-title="" title="">
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
-                               
+
                             </div>
                            <div class="mt-3">
-                            <button class="btn btn-primary" type="submit" data-bs-original-title="" title="">Update</button>
+                            <button class="btn btn-primary "type="submit" data-bs-original-title="" title="">Update</button>
                            </div>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -55,101 +58,27 @@
 
 
 @section('js')
+<script src="{{asset('Assets/Admin/js/form-validation-custom.js')}}"></script>
+<script src="{{asset('Asset/website/js/functions.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function user_active_toggle_function(user_id) {
-        $.ajax({
-            type: 'PUT',
-            url: "/admin/user/active-toggle/" + user_id,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function (data) {
-                $.notify({
-                    // title:'Title',
-                    message: 'Success'
-                }, {
-                    type: 'success',
-                    allow_dismiss: false,
-                    newest_on_top: false,
-                    mouse_over: false,
-                    showProgressbar: false,
-                    spacing: 10,
-                    timer: 500,
-                    placement: {
-                        from: 'top',
-                        align: 'right'
-                    },
-                    offset: {
-                        x: 30,
-                        y: 60
-                    },
-                    delay: 500,
-                    z_index: 10000,
-                    animate: {
-                        enter: 'animated fadeIn',
-                        exit: 'animated fadeOut'
-                    }
-                });
-            },
-            error: function (data) {},
-        });
-    }
 
-    function delete_user(user_id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            // icon: 'warning',
-            showCancelButton: true,
-            allowOutsideClick: false,
-            cancelButtonColor: '#7366ff',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Delete'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: 'DELETE',
-                    url: "/admin/users/" + user_id,
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    success: function (data) {
-                        $('#' + user_id).fadeOut('fast', function () {
-                            $('#' + user_id).remove();
-                        });
-                        $.notify({
-                            // title:'Title',
-                            message: 'User Successfully Deleted!'
-                        }, {
-                            type: 'success',
-                            allow_dismiss: false,
-                            newest_on_top: false,
-                            mouse_over: false,
-                            showProgressbar: false,
-                            spacing: 10,
-                            timer: 800,
-                            placement: {
-                                from: 'top',
-                                align: 'right'
-                            },
-                            offset: {
-                                x: 30,
-                                y: 60
-                            },
-                            delay: 500,
-                            z_index: 10000,
-                            animate: {
-                                enter: 'animated fadeIn',
-                                exit: 'animated fadeOut'
-                            }
-                        });
-                    }
-                });
+    $(function(){
+
+        $('#update_contact').on('submit',function(e){
+
+            e.preventDefault();
+            var form = this;
+            var contact_id = $(form).find('#contact_id').val();
+            var data ={
+                'mobile'
             }
+
         });
-    }
+
+
+    });
 
 </script>
-
 
 @endsection

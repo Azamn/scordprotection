@@ -38,19 +38,22 @@
 
                             </li>
 
-                            <li class="dropdown mt-3"><a href="href={{ route('our-service') }}">Our Services</a>
+                            <li class="dropdown mt-3"><a href={{ route('home') }}>Our Services</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="header-topbar.html">Light</a></li>
+                                    {{-- <li><a href="header-topbar.html">Light</a></li>
                                     <li><a href="header-topbar-dark.html">Dark</a></li>
                                     <li><a href="header-topbar-transparent.html">Transparent</a></li>
                                     <li><a href="header-topbar-colored.html">Colored</a></li>
-                                    <li><a href="header-topbar-fullwidth.html">Fullwidth</a></li>
+                                    <li><a href="header-topbar-fullwidth.html">Fullwidth</a></li> --}}
                                 </ul>
                             </li>
                             <li class="mt-3"><a href={{ route('contact-us') }}>Contact Us</a>
 
                             </li>
                             <li class="mt-3"><a href={{ route('get.our-clients') }}>Our Clients</a>
+
+                            </li>
+                            <li class="mt-3"><a href="{{asset('scordpdf.pdf')}}" target="_blank">Our Manual</a>
 
                             </li>
                         </ul>
@@ -64,4 +67,75 @@
 
         </div>
     </div>
+
+    <script src="{{asset('Asset/website/js/functions.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+// var $ = jQuery;
+$(document).ready(function() {
+
+    fetchService();
+
+    function fetchService(){
+        $.ajax({
+            type:"GET",
+            url: "{{ Route('get.dropDownService') }}",
+            dataType: "json",
+            data: {
+                "_token" : "{{ csrf_token() }}",
+            },
+            success: function(response){
+                // console.log(response.data);
+                $.each(response.data, function (key, item){
+                    $('.dropdown-menu').append(
+
+                        '<li class="service-page" id="serviceData" value='+item.id+' type="submit" ><a href="/api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+                        //'<li class="service-page" id="serviceData" data-id='+item.id+' type="submit"><a  href="api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+
+                    );
+                    // $('.service-page').on('click',function(){
+                    //     pageRedirect(item.id);
+                    // });
+                })
+            }
+        });
+    }
+
+    // single data for sevice
+
+
+
+
+});
+
+
+
+// function pageRedirect(id) {
+//     var myURL = document.location;
+//       window.location.href = myURL + "api/admin/get-single/service/"+id;
+//     }
+
+
+
+// function servicePage(id){
+//     //debugger;
+//     var queryParams = new URLSearchParams(window.location.search);
+//     var myURL = document.location;
+//     // var host = myUrl.host;
+//     // var pathName = myUrl.pathname;
+//     //document.location = myURL + "api/admin/get-single/service/"+id;
+//     window.location.href = '';
+//     window.location.href = myURL + "api/admin/get-single/service/"+id;
+
+
+//     //window.history.replaceState(null, null, myURL + "api/admin/get-single/service/"+id);
+
+// }
+
+</script>
+
 </header>
+
+
+

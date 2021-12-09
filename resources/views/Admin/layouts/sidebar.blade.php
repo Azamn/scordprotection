@@ -22,7 +22,7 @@
                     </li>
                     <li class="sidebar-list">
                         <a class="nav-link" href="{{ route('about-us.getAll') }}"><i
-                                data-feather="monitor"></i><span>About Us</span></a>
+                                data-feather="monitor"></i><span>About US</span></a>
                     </li>
                     <li class="sidebar-list">
                         <a class="nav-link" href="{{ route('list-service') }}"><i
@@ -33,8 +33,8 @@
                                 data-feather="monitor"></i><span>Clients</span></a>
                     </li>
                     <li class="sidebar-list">
-                        <a class="nav-link" href="/admin/contact"><i
-                                data-feather="git-merge"></i><span>Contact</span></a>
+                        <a class="nav-link" href="{{ route('get.contact') }}"><i
+                                data-feather="git-merge"></i><span>Contact US</span></a>
                     </li>
                     <li class="sidebar-list">
                         <a class="nav-link" href="{{ route('get.all-features') }}"><i

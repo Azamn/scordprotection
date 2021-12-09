@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\OurClietsController;
 use App\Http\Controllers\Admin\GetInTouchController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FeedbackController;
 use App\Models\GetInTouch;
 
@@ -46,10 +47,10 @@ Route::get('/change/client/status',[OurClietsController::class, 'changeClientSta
 
 /** Route :: Services */
 Route::get('/get-all/service',[ServiceController::class, 'getAll']);
-
-Route::get('/get-single/service',[ServiceController::class,'getSingle'])->name('get-single.service');
+Route::get('/get-single/service/{service}',[ServiceController::class,'getSingle'])->name('get-single.service');
 Route::post('/update/service/{serviceId}',[ServiceController::class, 'update']);
 Route::delete('/delete/service',[ServiceController::class,'delete'])->name('delete.service');
+Route::get('/get/service/drop-down',[ServiceController::class,'getServiceFOrDropdown'])->name('get.dropDownService');
 
 /** Route :: features */
 Route::get('/get-all/features', [FeatureController::class, 'getAll'])->name('get.all-features');
@@ -63,5 +64,8 @@ Route::get('customer/feedback',[FeedbackController::class,'getAll'])->name('get.
 Route::post('/create/feedback',[FeedbackController::class, 'create'])->name('store.feedback');
 Route::delete('/delete/feedback',[FeedbackController::class, 'delete'])->name('feedback.delete');
 Route::get('/change/feedback/status',[FeedbackController::class, 'changeFeedbackStatus'])->name('feedback.change.status');
+
+/** Route :: Contact US */
+Route::get('/get/contact-us',[ContactUsController::class,'getContact'])->name('get.contact');
 
 Route::get('/home',[HomePageController::class, 'index']);
