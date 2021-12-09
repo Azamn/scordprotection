@@ -53,6 +53,9 @@
                             <li class="mt-3"><a href={{ route('get.our-clients') }}>Our Clients</a>
 
                             </li>
+                            <li class="mt-3"><a href="{{asset('scordpdf.pdf')}}" target="_blank">Our Manual</a>
+
+                            </li>
                         </ul>
 
                         <ul>
