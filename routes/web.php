@@ -53,7 +53,7 @@ Route::get('/services', function () {
 
 
 Route::get('/admin/login', function () {
-    return view('admin.Login.admin-login');
+    return view('Admin.Login.admin-login');
 });
 
 Route::get('/admin/request',[GetInTouchController::class, 'getAll'])->name('get.customer-request');
