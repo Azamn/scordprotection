@@ -12,8 +12,8 @@
         content="scord protection, scordprotection,Scord Protection, Security, security, Navi mumbai security, panvel security, office-security, government security">
     <meta name="author" content="pixelstrap">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="shortcut icon" href="{{asset('Admin/images/favicon.png')}}" type="image/x-icon">
-    <title>FE Admin Panel</title>
+    <link rel="shortcut icon" href="{{asset('images/Scord.png')}}" type="image/x-icon">
+    <title>Scord Protection</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap"
         rel="stylesheet">

@@ -33,7 +33,7 @@
 
                         <ul>
                             <li class="mr-3"><img src="{{{asset('images/Scord.png')}}}" alt="" width="120px"></li>
-                            <li class="mt-3"><a href={{ route('home') }}>Home</a></li>
+                            <li class="mt-3"><a href={{ route('index') }}>Home</a></li>
                             <li class="mt-3"><a href="#aboutus">About Us</a>
 
                             </li>
