@@ -37,24 +37,7 @@ class AuthController extends Controller
 
             $user = User::where('email', $request->email)->first();
 
-
             $isValidUser = Auth::attempt($credentials);
-
-            // if (!$isValidUser) {
-            //     $membership = Membership::where('membership_number', $request->email)->first();
-            //     $user_id = optional($membership)->user_id;
-
-            //     $user = User::where('id', $user_id)->first();
-
-
-            //     $credentials = [
-            //         'email' => optional($user)->email,
-            //         'password' => $request->password,
-            //     ];
-
-            //     $isValidUser = Auth::attempt($credentials);
-            // }
-
 
             if (!$isValidUser) {
 
@@ -67,7 +50,7 @@ class AuthController extends Controller
                 ]);
             } else {
 
-                $token = $user->createToken('igymtoken')->plainTextToken;
+                $token = $user->createToken('scord-protection')->plainTextToken;
 
                 return response()->json([
                     'user_id' => $user->id,

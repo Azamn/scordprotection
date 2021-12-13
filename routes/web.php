@@ -16,28 +16,38 @@ use App\Http\Controllers\DashboardController;
 
 Auth::routes();
 
-Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth:sanctum'], function () {
+
+    Route::view('/create/service', 'admin.Service.service-create')->name('create-service');
+    Route::view('/create/clients-data', 'admin.Client.client-create')->name('create-clients');
+
+    /** Dashboard Route */
+    Route::get('/admin/dashboard', [DashboardController::class, 'dashboardPage'])->name('dashboard');
+
+    /** Admin Side */
+    /** Service Route */
+    Route::get('/service/list', [ServiceController::class, 'getAll'])->name('list-service');
+    Route::post('/create/services', [ServiceController::class, 'create'])->name('store.services');
+
+    /** Our Clients Route */
+    Route::get('/get-all/our-clients', [OurClietsController::class, 'getAll'])->name('get.all-ourClients');
+
+    Route::post('/create/get-in-touch', [GetInTouchController::class, 'create'])->name('store.get-in-touch');
+
+
+});
 
 Route::view('/contact-us/page', 'main.contactus')->name('contact-us');
 Route::view('/service-page', 'main.service')->name('our-service');
-
-/** Admin Side */
-/** Service Route */
-Route::get('/service/list',[ServiceController::class,'getAll'])->name('list-service');
-Route::post('/create/services',[ServiceController::class, 'create'])->name('store.services');
-Route::view('/create/service','admin.Service.service-create')->name('create-service');
+Route::get('/', [HomePageController::class, 'index'])->name('index');
 
 
-/** Our Clients Route */
-Route::get('/get-all/our-clients',[OurClietsController::class, 'getAll'])->name('get.all-ourClients');
-Route::view('/create/clients-data','admin.Client.client-create')->name('create-clients');
+Route::get('/our-clients/page', [HomePageController::class, 'ourClientsView'])->name('get.our-clients');
 
-Route::post('/create/get-in-touch',[GetInTouchController::class, 'create'])->name('store.get-in-touch');
 
-Route::get('/our-clients/page',[HomePageController::class,'ourClientsView'])->name('get.our-clients');
 
-/** Dashboard Route */
-Route::get('/admin/dashboard',[DashboardController::class, 'dashboardPage']);
+
+
 
 // Route::get('/admin/dashboard', function () {
 //     return view('admin.dashboard');
@@ -56,7 +66,7 @@ Route::get('/admin/login', function () {
     return view('Admin.Login.admin-login');
 });
 
-Route::get('/admin/request',[GetInTouchController::class, 'getAll'])->name('get.customer-request');
+Route::get('/admin/request', [GetInTouchController::class, 'getAll'])->name('get.customer-request');
 
 
 // Route::get('/admin/request', function () {
@@ -109,3 +119,7 @@ Route::get('/admin/service-create', function () {
 Route::get('/admin/service-edit', function () {
     return view('admin.Service.service-edit');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

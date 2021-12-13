@@ -49,10 +49,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     /** Route :: Services */
     Route::get('/get-all/service', [ServiceController::class, 'getAll']);
-    Route::get('/get-single/service/{service}', [ServiceController::class, 'getSingle'])->name('get-single.service');
     Route::post('/update/service/{serviceId}', [ServiceController::class, 'update']);
     Route::delete('/delete/service', [ServiceController::class, 'delete'])->name('delete.service');
-    Route::get('/get/service/drop-down', [ServiceController::class, 'getServiceFOrDropdown'])->name('get.dropDownService');
 
     /** Route :: features */
     Route::get('/get-all/features', [FeatureController::class, 'getAll'])->name('get.all-features');
@@ -70,5 +68,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
 /** Route :: Contact US */
 Route::get('/get/contact-us', [ContactUsController::class, 'getContact'])->name('get.contact');
+Route::get('/get/service/drop-down', [ServiceController::class, 'getServiceFOrDropdown'])->name('get.dropDownService');
+Route::get('/get-single/service/{service}', [ServiceController::class, 'getSingle'])->name('get-single.service');
 
-Route::get('/home', [HomePageController::class, 'index']);
+//Route::get('/', [HomePageController::class, 'index']);
