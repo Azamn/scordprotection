@@ -26,16 +26,16 @@
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="hidden" id="contact_id" value="{{ $contact->id }}">
+                                    <input type="hidden" id="contact_id" value="{{ $contact->id ?? NULL }}">
 
                                     <label class="form-label" for="validationCustom01">Phone Number</label>
-                                    <input class="form-control" id="mobile_no" type="number" value="{{ $contact->mobile_no }}"
+                                    <input class="form-control" id="mobile_no" type="number" value="{{$contact->mobile_no ?? NULL}}"
                                         required="" data-bs-original-title="" title="">
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
                                 <div class=" col-md-6">
                                     <label class="form-label" for="validationCustom02">Email</label>
-                                    <input class="form-control" id="email" type="email" value="{{ $contact->email }}"
+                                    <input class="form-control" id="email" type="email" value="{{ $contact->email ?? NULL}}"
                                         required="" data-bs-original-title="" title="">
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>

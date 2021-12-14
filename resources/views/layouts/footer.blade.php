@@ -6,11 +6,8 @@
                     <div class="widget">
 
                         <div class="widget-title">Scord Protection</div>
-                        <p class="mb-5">Built with love in Fort Worth, Texas, USA<br> All rights reserved.
-                            Copyright © 2021. INSPIRO. The most happiest time of the day!. Praesent id dolor
-                            dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies
-                            ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus.
-                            Suspendisse vel lacus est, sit amet tincidunt erat. </p>
+                        <p class="mb-5">SCORD PROTECTION FORCE Screens the <br> secutity personal before appointment. <br> Out procedure is to
+                            undertake complete <br> local & native place address including <br> photographs of the individual. </p>
                         <!-- <a href="https://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923" class="btn btn-inverted" target="_blank">Purchase Now</a> -->
                     </div>
                 </div>
@@ -33,11 +30,7 @@
                         <div class="col-lg-3">
                             <div class="widget">
                                 <div class="widget-title">Our Services</div>
-                                <ul class="list">
-                                    <li><a href="#">Armed and Unarmed Forces</a></li>
-                                    <li><a href="#">Security Officers</a></li>
-                                    <li><a href="#">Bouncers</a></li>
-                                    <li><a href="#">Lady Searchers</a></li>
+                                <ul class="list" id="footer-list">
                                 </ul>
                             </div>
                         </div>
@@ -50,7 +43,7 @@
                                     <li><a href="#">Address : B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli - 410218. </a>
                                     </li>
                                     <li><a href="#">Call Us : (+91) 84528 57451 </a></li>
-                                    <li><a href="#">Mail Us : nfo@scordprotection.in</a></li>
+                                    <li><a href="#">Mail Us : info@scordprotection.in</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -67,3 +60,37 @@
         </div>
     </div>
 </footer>
+<script>
+$(document).ready(function() {
+
+    fetchService();
+
+    function fetchService(){
+        $.ajax({
+            type:"GET",
+            url: "{{ Route('get.dropDownService') }}",
+            dataType: "json",
+            data: {
+                "_token" : "{{ csrf_token() }}",
+            },
+            success: function(response){
+                // console.log(response.data);
+                $.each(response.data, function (key, item){
+                    $('#footer-list').append(
+                        '<li><a href="/api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+                        //'<li class="service-page" id="serviceData" value='+item.id+' type="submit" ><a href="/api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+                        //'<li class="service-page" id="serviceData" data-id='+item.id+' type="submit"><a  href="api/admin/get-single/service/'+item.id+'">'+item.name+'</a></li>'
+
+                    );
+                    // $('.service-page').on('click',function(){
+                    //     pageRedirect(item.id);
+                    // });
+                })
+            }
+        });
+    }
+
+    // single data for sevice
+
+});
+</script>
