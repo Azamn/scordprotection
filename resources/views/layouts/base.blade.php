@@ -4,9 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="INSPIRO" />
-    <meta name="description" content="Themeforest Template Polo, html template">
-    
+    <meta name="Scord Protection" content="Scord Protection is an ISO 9001:2008 Certified company which is registered with the office the commissioner of Police. License No. 306. Jaguar Group is one of the best security & protection company approved by government of Maharashtra. ">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="{{asset('images/Scord.png')}}" type="image/x-icon">
     <title>Scord Protection</title>
