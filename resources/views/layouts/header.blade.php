@@ -38,7 +38,7 @@
 
                             </li>
 
-                            <li class="dropdown mt-3"><a href={{ route('home') }}>Our Services</a>
+                            <li class="dropdown mt-3"><a href="#">Our Services</a>
                                 <ul class="dropdown-menu">
                                     {{-- <li><a href="header-topbar.html">Light</a></li>
                                     <li><a href="header-topbar-dark.html">Dark</a></li>

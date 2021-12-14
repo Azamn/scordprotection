@@ -11,7 +11,6 @@ class ContactUsController extends Controller
 
     public function create(Request $request)
     {
-
         $rules = [
             'mobile_no' => 'required|numeric|min:10|max:10',
             'email' => 'required|email',
@@ -23,11 +22,11 @@ class ContactUsController extends Controller
             return response()->json(['status' => false, 'errors' => $validator->errors()]);
         } else {
 
-            $contactUs = new ContactUs();
+            $contactUs = ContactUs::where('id',$request->id)->first();
             $contactUs->mobile_no = $request->mobile_no;
             $contactUs->email = $request->email;
 
-            $contactUs->save();
+            $contactUs->update();
 
             return response()->json(['status' => true, 'message' => 'Contatc Us Detail Updated Successfully.']);
         }
@@ -39,4 +38,6 @@ class ContactUsController extends Controller
         return view('admin.User.contact',compact('contact'));
 
     }
+
+
 }

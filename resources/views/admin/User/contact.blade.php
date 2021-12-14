@@ -22,7 +22,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="needs-validation" id="update_contact" method="POST" enctype="multipart/form-data" novalidate="">
+                        <form class="needs-validation" id="update_contact"  enctype="multipart/form-data" novalidate="">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -63,21 +63,44 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
-    $(function(){
-
         $('#update_contact').on('submit',function(e){
-
             e.preventDefault();
-            var form = this;
-            var contact_id = $(form).find('#contact_id').val();
-            var data ={
-                'mobile'
-            }
 
+            let id = $('#contact_id').val();
+            let mobile_no = $('#mobile_no').val();
+            let email = $('#email').val();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:'{{ route("update.contatc") }}',
+                    method:'POST',
+                    data:{
+                        id:id,
+                        mobile_no:mobile_no,
+                        email:email,
+                        },
+                    dataType:'json',
+                success : function(data){
+
+                    if(data.status == true){
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            location.reload(true);
+                    }
+                            // title:'Title',
+                },
+                error : function(data){
+                },
+            });
         });
 
-
-    });
 
 </script>
 
