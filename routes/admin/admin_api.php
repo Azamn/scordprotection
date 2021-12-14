@@ -64,10 +64,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/create/feedback', [FeedbackController::class, 'create'])->name('store.feedback');
     Route::delete('/delete/feedback', [FeedbackController::class, 'delete'])->name('feedback.delete');
     Route::get('/change/feedback/status', [FeedbackController::class, 'changeFeedbackStatus'])->name('feedback.change.status');
+
+    /** Route :: Contact US */
+    Route::get('/get/contact-us', [ContactUsController::class, 'getContact'])->name('get.contact');
+    Route::post('/update/contatc-us', [ContactUsController::class, 'create'])->name('update.contatc');
 });
 
-/** Route :: Contact US */
-Route::get('/get/contact-us', [ContactUsController::class, 'getContact'])->name('get.contact');
+
 Route::get('/get/service/drop-down', [ServiceController::class, 'getServiceFOrDropdown'])->name('get.dropDownService');
 Route::get('/get-single/service/{service}', [ServiceController::class, 'getSingle'])->name('get-single.service');
 
