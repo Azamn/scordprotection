@@ -8,18 +8,29 @@
     }
 </style>
 
+<style>
+    .image_full{
+        background-image:url({{asset('images/background1.png')}});
+       }
+
+
+
+     @media (max-width: 640px) and (min-width: 320px){
+       .image_full{
+        background-image:url({{asset('images/backgroundMobile.png')}});
+       }
+
+     }
+
+    </style>
+
 <div class="body-inner">
 
     <!-- Inspiro Slider -->
     <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
         <!-- Slide 1 -->
-        <div class="slide" style="background-image:url('images/background1.png');">
+        <div class="slide image_full" >
 
-            <div class="container">
-                <div class="slide-captions text-center text-light">
-
-                </div>
-            </div>
         </div>
 
     </div>
