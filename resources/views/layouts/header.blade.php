@@ -4,7 +4,7 @@
             <div class="header-extras">
                 <ul>
                     <li class="mr-3 d-sm-block d-lg-none d-xl-none ">
-                        <a class="btn btn-sm text-white" href="tel:+918452857451"> <i class="icon-phone mr-1"></i> Call
+                        <a class="btn btn-sm text-white" href="tel:+919967797555"> <i class="icon-phone mr-1"></i> Call
                             Us</a>
                     </li>
                     <li class="mr-3">

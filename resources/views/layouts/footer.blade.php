@@ -42,7 +42,7 @@
                                 <ul class="list">
                                     <li><a href="#">Address : B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli - 410218. </a>
                                     </li>
-                                    <li><a href="#">Call Us : (+91) 84528 57451 </a></li>
+                                    <li><a href="#">Call Us : (+91) 9967797555 </a></li>
                                     <li><a href="#">Mail Us : info@scordprotection.in</a></li>
                                 </ul>
                             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\ContactUs;
 use App\Models\Feature;
 use App\Models\MasterFeedback;
 use App\Models\MasterService;
@@ -89,9 +90,12 @@ class HomePageController extends Controller
             array_push($feedBackData, $data);
         }
 
+
+        $contactUs = ContactUs::where('status',1)->first();
+
         //return $ourClientData;
 
-        return view("main.index", compact('aboutUsData', 'servicesData', 'featuresData', 'ourClientData','feedBackData'));
+        return view("main.index", compact('aboutUsData', 'servicesData', 'featuresData', 'ourClientData','feedBackData','contactUs'));
     }
 
     public function ourClientsView(Request $request)
