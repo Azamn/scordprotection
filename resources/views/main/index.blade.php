@@ -152,7 +152,7 @@
                 <strong>
                     <h4> TO DISCUSS YOUR SECURITY REQUIREMENTS</h4>
                     <a href="{{asset('scordpdf.pdf')}}" target="_blank" class="btn btn-lg btn-white mb-4"> Downlaod Manual</a>
-                    <h4>CALL US NOW AT +91-8452857451</h4>
+                    <h4>CALL US NOW AT +91-{{ $contactUs->mobile_no }}</h4>
                 </strong>
 
             </div>
@@ -233,7 +233,7 @@
                                 <strong>SCORD </strong><br>
                                 B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli -
                                 410218. <br>
-                                <abbr title="Phone">P:</h4> (+91) 84528 57451
+                                <abbr title="Phone">P:</h4> (+91) {{ $contactUs->mobile_no }}
                             </address>
                         </div>
                     </div>
