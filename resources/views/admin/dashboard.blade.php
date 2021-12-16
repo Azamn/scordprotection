@@ -9,10 +9,9 @@
                     <h3>Dashboard</h3>
                 </div>
                 <div class="col-6">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb text-white">
                         <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
                         <li class="breadcrumb-item">Dashboard</li>
-                        <li class="breadcrumb-item active">Ecommerce</li>
                     </ol>
                 </div>
             </div>
