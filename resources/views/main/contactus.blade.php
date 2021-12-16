@@ -61,7 +61,7 @@
                                 <strong>SCORD PROTECTION FORCE</strong><br>
                                 B wing, 227 Steel chamber tower, near MTNL Office,Steel market road, Kalamboli -
                                 410218. <br>
-                                <abbr title="Phone">P:</h4> (+91) 12345-67890
+                                <abbr title="Phone">P:</h4> (+91) 99677975555
                             </address>
                         </div>
                     </div>
