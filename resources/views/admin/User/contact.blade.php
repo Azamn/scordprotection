@@ -22,22 +22,24 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="needs-validation" id="update_contact"  enctype="multipart/form-data" novalidate="">
+                        <form class="needs-validation" id="update_contact"  enctype="multipart/form-data">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <input type="hidden" id="contact_id" value="{{ $contact->id ?? NULL }}">
 
                                     <label class="form-label" for="validationCustom01">Phone Number</label>
-                                    <input class="form-control" id="mobile_no" type="number" value="{{$contact->mobile_no ?? NULL}}"
+                                    <input class="form-control" name="mobile_no" id="mobile_no" type="number" value="{{$contact->mobile_no ?? NULL}}"
                                         required="" data-bs-original-title="" title="">
-                                    <div class="valid-feedback">Looks good!</div>
+                                        <span class="text-danger error-text mobile_no_error"></span>
+                                    {{-- <div class="valid-feedback">Looks good!</div> --}}
                                 </div>
                                 <div class=" col-md-6">
                                     <label class="form-label" for="validationCustom02">Email</label>
-                                    <input class="form-control" id="email" type="email" value="{{ $contact->email ?? NULL}}"
+                                    <input class="form-control" name="email" id="email" type="email" value="{{ $contact->email ?? NULL}}"
                                         required="" data-bs-original-title="" title="">
-                                    <div class="valid-feedback">Looks good!</div>
+                                        <span class="text-danger error-text email_error"></span>
+                                    {{-- <div class="valid-feedback">Looks good!</div> --}}
                                 </div>
 
                             </div>
@@ -74,7 +76,7 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    url:'{{ route("update.contatc") }}',
+                    url:'{{ route("update.contact-us") }}',
                     method:'POST',
                     data:{
                         id:id,
@@ -83,7 +85,7 @@
                         },
                     dataType:'json',
                 success : function(data){
-
+                    console.log(data);
                     if(data.status == true){
                             Swal.fire({
                                 position: 'center',
@@ -93,7 +95,13 @@
                                 timer: 3000
                             });
                             location.reload(true);
+                    }else{
+                        $.each(data.errors, function(prefix,val){
+                            $(form).find('span.'+prefix+'_error').text(val[0]);
+                        });
                     }
+
+
                             // title:'Title',
                 },
                 error : function(data){

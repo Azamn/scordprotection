@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::view('/create/service', 'admin.Service.service-create')->name('create-service');
     Route::view('/create/clients-data', 'admin.Client.client-create')->name('create-clients');
 
+    Route::get('/admin/request', [GetInTouchController::class, 'getAll'])->name('get.customer-request');
+
     /** Dashboard Route */
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboardPage'])->name('dashboard');
 
@@ -66,7 +68,6 @@ Route::get('/admin/login', function () {
     return view('Admin.Login.admin-login');
 });
 
-Route::get('/admin/request', [GetInTouchController::class, 'getAll'])->name('get.customer-request');
 
 
 // Route::get('/admin/request', function () {

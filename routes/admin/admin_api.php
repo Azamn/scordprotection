@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     /** Route :: Services */
     Route::get('/get-all/service', [ServiceController::class, 'getAll']);
     Route::post('/update/service/{serviceId}', [ServiceController::class, 'update']);
+    Route::get('/get/single/service/list/{serviceId}',[ServiceController::class,'getSingleData']);
     Route::delete('/delete/service', [ServiceController::class, 'delete'])->name('delete.service');
 
     /** Route :: features */
@@ -67,7 +68,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     /** Route :: Contact US */
     Route::get('/get/contact-us', [ContactUsController::class, 'getContact'])->name('get.contact');
-    Route::post('/update/contatc-us', [ContactUsController::class, 'create'])->name('update.contatc');
+    Route::post('/update/contatc-us', [ContactUsController::class, 'create'])->name('update.contact-us');
 });
 
 
