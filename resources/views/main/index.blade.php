@@ -110,7 +110,7 @@
         <div class="container text-white">
             <div class="text-center heading-text heading-section" >
                 <h2 class="lineh2"> Our Featured Security Services </h2>
-                <div><b><h5>SCORD PROTECTION FORCE Security Propose To Respond To All Requirements By Providing On a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
+                <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
                 @foreach (@$servicesData as $service)
@@ -202,11 +202,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h3 class="text-uppercase">Get In Touch</h3>
-                    <p>If you have any questions, or you would like to talk to us about your project,
-                        we would love to hear from you.
-                        We invite you to give us a call or drop us a line.
-                        If you want to sit down with us for a chat,
-                        we'll make sure we've got the coffee ready.</p>
+                    <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
+                        turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
+                        fermentum bibendum.</p>
                     <div class="m-t-30">
                         <form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
                         @csrf
@@ -260,7 +258,7 @@
         </div>
     </section>
 
-    @if($feedback)
+    @if($feedBackData)
     <section class="background p-50"  style="background-color: #07a8c9">
         <div class="container text-white">
             <div class="text-center mb-0 heading-text heading-section">
@@ -269,13 +267,13 @@
             <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
                 @foreach ($feedBackData as $key => $feedback )
-
+                @if($feedback)
                 <div class="testimonial-item pt-0">
                     <p>{{ $feedback['message'] }}</p>
                     <span>-{{ $feedback['name'] }}</span>
                     {{-- <span>CEO, Square Software</span> --}}
                 </div>
-
+                @endif
                 @endforeach
             </div>
         </div>
