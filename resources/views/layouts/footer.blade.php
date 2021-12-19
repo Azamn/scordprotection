@@ -17,11 +17,11 @@
                             <div class="widget">
                                 <div class="widget-title">Menu</div>
                                 <ul class="list">
-                                    <li><a href="scord.html">Home</a></li>
-                                    <li><a href="scordaboutus.html">About Us</a></li>
+                                    <li><a href={{ route('index') }}>Home</a></li>
+                                    <li><a href="#aboutus">About Us</a></li>
                                     <li><a href="#">Our Services</a></li>
-                                    <li><a href="scordcontactus.html">Contact Us</a></li>
-                                    <li><a href="#">Our Clients</a></li>
+                                    <li><a href={{ route('contact-us') }}>Contact Us</a></li>
+                                    <li><a href={{ route('get.our-clients') }}>Our Clients</a></li>
                                     <!-- <li><a href="#">Customers</a></li> -->
                                 </ul>
                             </div>

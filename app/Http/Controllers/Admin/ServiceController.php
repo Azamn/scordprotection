@@ -85,6 +85,23 @@ class ServiceController extends Controller
         // }
     }
 
+    public function getSingleData(Request $request, $service)
+    {
+        // $service = MasterService::where('id', $service->id)->first();
+        $service = MasterService::where('id', $service)->first();
+        $serviceData = [
+            'id' => $service->id,
+            'name' => $service->name,
+            'description' => $service->description,
+            'image_url' => $service->media->isNotEmpty() ? $service->media->last()->getFullUrl() : NULL,
+        ];
+
+       // return $serviceData;
+
+        return view('admin.Service.service-edit', compact('serviceData'));
+
+    }
+
     public function update(Request $request, $serviceId)
     {
 

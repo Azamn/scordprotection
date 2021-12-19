@@ -49,7 +49,7 @@
                             </td>
                             <td><img src="{{ $service['image_url'] }}" alt="" width = "100"></td>
                             <td>
-                                {{-- <a class="btn btn-primary m-2" href="{{ route('get-single.service',$service['id']) }}" id="editBtn">Edit</a> --}}
+                                {{-- <a class="btn btn-primary m-2"href="{{ '/api/admin/get/single/service/list/'.$service['id'] }}" id="editBtn">Edit</a> --}}
                                 <button class="btn btn-danger m-2" data-id="{{ $service['id'] }}" id="deleteBtn" type="submit">Delete</button>
                             </td>
                         </tr>

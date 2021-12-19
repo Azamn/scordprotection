@@ -12,7 +12,7 @@ class ContactUsController extends Controller
     public function create(Request $request)
     {
         $rules = [
-            'mobile_no' => 'required|numeric|min:10|max:10',
+            'mobile_no' => 'required|numeric|min:10',
             'email' => 'required|email',
         ];
 
