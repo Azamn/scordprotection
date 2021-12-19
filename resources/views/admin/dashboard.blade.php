@@ -83,20 +83,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 box-col-6 col-md-6">
-                        <div class="card o-hidden">
-                            <div class="card-header  text-white card-no-border" style="background-color :#a7c724">
 
-                                <div class="media">
-                                    <div class="media-body">
-                                        <p><span class="f-w-900 text-white font-roboto">Request </span></p>
-                                        <h4 class="f-w-900 mb-0 f-26 counter">1</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                 </div>
             </div>
