@@ -260,7 +260,7 @@
         </div>
     </section>
 
-
+    @if($feedback)
     <section class="background p-50"  style="background-color: #07a8c9">
         <div class="container text-white">
             <div class="text-center mb-0 heading-text heading-section">
@@ -269,18 +269,18 @@
             <div class="carousel arrows-visibile testimonial testimonial-single testimonial-blockquote " data-items="1" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-loop="true">
                 <!-- Testimonials item -->
                 @foreach ($feedBackData as $key => $feedback )
-                @if($feedback)
+
                 <div class="testimonial-item pt-0">
                     <p>{{ $feedback['message'] }}</p>
                     <span>-{{ $feedback['name'] }}</span>
                     {{-- <span>CEO, Square Software</span> --}}
                 </div>
-                @endif
+
                 @endforeach
             </div>
         </div>
     </section>
-
+    @endif
     <section id="feedback" class="text-dark">
         <div class="heading-text heading-section text-center">
             <h2>FEEDBACK</h2>
