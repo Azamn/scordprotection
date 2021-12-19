@@ -26,7 +26,7 @@
                     <div class="card-header">
                         <h5>Client Details</h5>
                     </div>
-                    <form class="widget-contact-form" id="clientAdd" action="{{ route('our-client.create') }}" method="POST" enctype="multipart/form-data">
+                    <form class="widget-contact-form" id="clientAdd" action="{{ route('client.create') }}" method="POST" enctype="multipart/form-data">
                     {{-- <form method="post" action="" class="form theme-form needs-validation" novalidate="" enctype="multipart/form-data" > --}}
                         @csrf
                         <meta name="csrf-token" content="yfXzE8OYEU7NhGfZDXxqQd532do1eI1PStO3MqkX">
