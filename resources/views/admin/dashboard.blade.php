@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-7 box-col-7 col-lg-12 col-md-7">
+                    <div class="col-xl-12 box-col-12 col-lg-12 col-md-12">
                         <div class="card o-hidden" >
                             <div class="card-header card-no-border" style="background-color :#a7c724">
 
