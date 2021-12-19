@@ -10,7 +10,7 @@
 
 <style>
     .image_full{
-        background-image:url({{asset('images/background1.png')}});
+        background-image:url({{asset('images/background2.png')}});
        }
 
 
@@ -27,12 +27,22 @@
 <div class="body-inner">
 
     <!-- Inspiro Slider -->
-    <div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
+    <div id="slider" class="inspiro-slider slider-fullscreen" data-height-xs="360">
         <!-- Slide 1 -->
-        <div class="slide image_full" >
+        <div class="slide image_full">
 
+            <div class="container">
+                <div class="slide-captions">
+                    <!-- Captions -->
+                    {{-- <h2 class="text-light m-b-10">Pixel Perfection</h2>
+                    <h4 class="m-b-40 text-light m-b-10">Set your goals high, and don't stop till you get there.</h4>
+                    <a class="btn btn-light"><i class="fa fa-check"></i>Explore more</a> --}}
+                    <!-- end: Captions -->
+                </div>
+
+            </div>
         </div>
-
+        <!-- end: Slide 1 -->
     </div>
     <!--end: Inspiro Slider -->
 
