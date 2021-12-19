@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     /** Route :: OurClients */
     Route::get('/get-all/our-clients', [OurClietsController::class, 'getAll'])->name('all-ourClients');
-    Route::post('/create/our-clients', [OurClietsController::class, 'create'])->name('our-client.create');
+    Route::post('/create/our-clients', [OurClietsController::class, 'create'])->name('client.create');
     Route::get('/get-single/our-clients/{clientId}', [OurClietsController::class, 'getSingle']);
     Route::post('/update/our-clients/{clientId}', [OurClietsController::class, 'update']);
     Route::delete('/delete/our-clients', [OurClietsController::class, 'delete'])->name('client.delete');
