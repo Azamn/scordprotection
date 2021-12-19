@@ -5,9 +5,10 @@
                 <div class="col-lg-5">
                     <div class="widget">
 
-                        <div class="widget-title">Scord Protection</div>
-                        <p class="mb-5">SCORD PROTECTION FORCE Screens the <br> secutity personal before appointment. <br> Out procedure is to
-                            undertake complete <br> local & native place address including <br> photographs of the individual. </p>
+                        <div class="widget-title">SCORD PROTECTION FORCE</div>
+                        <p class="mb-5">SCORD PROTECTION FORCE is an ISO 9001:2015 Certified <br>
+                            company which is registered with the office commissioner <br>
+                            of Police. Scord Protection Force is one of the best security <br>& protection company approved by government of Maharashtra.</p>
                         <!-- <a href="https://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923" class="btn btn-inverted" target="_blank">Purchase Now</a> -->
                     </div>
                 </div>

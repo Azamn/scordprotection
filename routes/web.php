@@ -14,7 +14,7 @@ use App\Http\Controllers\DashboardController;
 // });
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
 

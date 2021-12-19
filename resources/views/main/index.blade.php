@@ -202,9 +202,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h3 class="text-uppercase">Get In Touch</h3>
-                    <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla
-                        turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada
-                        fermentum bibendum.</p>
+                    <p>If you have any questions, or you would like to talk to us about your project,
+                        we would love to hear from you.
+                        We invite you to give us a call or drop us a line.
+                        If you want to sit down with us for a chat,
+                        we'll make sure we've got the coffee ready.</p>
                     <div class="m-t-30">
                         <form class="widget-contact-form" id="get-in-touch-form" novalidate role="form" method="POST">
                         @csrf
