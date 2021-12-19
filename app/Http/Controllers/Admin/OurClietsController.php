@@ -39,7 +39,7 @@ class OurClietsController extends Controller
     {
 
         $rules = [
-            'name' => 'required|string|regex:/^[a-zA-Z ]*$/|max:30',
+            'name' => 'required|string|regex:/^[a-zA-Z,- ]*$/|max:100',
             'description' => 'sometimes|required|string',
             'image' => 'sometimes|required'
         ];
