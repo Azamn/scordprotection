@@ -110,7 +110,7 @@
         <div class="container text-white">
             <div class="text-center heading-text heading-section" >
                 <h2 class="lineh2"> Our Featured Security Services </h2>
-                <div><b>Protection security group propose to respond to all requirements by providing on a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
+                <div><b><h5>SCORD PROTECTION FORCE Security Propose To Respond To All Requirements By Providing On a twenty-four hour, seven-days week basis, a competent and uniformed guard force to accomplish the requirements of the client.</b></div>
             </div>
             <div class="row">
                 @foreach (@$servicesData as $service)
